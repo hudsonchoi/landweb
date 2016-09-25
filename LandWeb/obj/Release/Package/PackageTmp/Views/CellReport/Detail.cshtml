@@ -1,0 +1,128 @@
+﻿@model LandWeb.Models.CellReportDetailViewModel
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Back = true;
+}
+<style type="text/css">
+    .footer {
+        position: relative !important;
+        margin-top:20px
+    }
+</style>
+<div class="row">
+    <div class="col-md-3 col-sm-6 DataRow">
+        <span class="lbl">ID</span>
+        @Model.Report.Id
+    </div>
+    <div class="col-md-3 col-sm-6 DataRow">
+        <span class="lbl">순명</span>
+        @Model.Report.CellName
+    </div>
+    <div class="col-md-3 col-sm-6 DataRow">
+        <span class="lbl">인도자</span>
+        @Model.Report.leader
+    </div>
+    <div class="col-md-3 col-sm-6 DataRow">
+        <span class="lbl">작성일</span>
+        @Model.Report.reg_date.ToShortDateString()
+    </div>
+</div>
+ <div class="row">
+    <div class="col-md-3 col-sm-6 DataRow">
+        <span class="lbl">모임일</span>
+        @Model.Report.cell_date.ToShortDateString()
+    </div>
+    <div class="col-md-3 col-sm-6 DataRow">
+        <span class="lbl">Prayer</span>
+        @Model.Report.prayer
+    </div>
+    <div class="col-md-3 col-sm-6 DataRow">
+        <span class="lbl">참석수</span>
+        @Model.Report.atten_count
+    </div>
+    <div class="col-md-3 col-sm-6 DataRow">
+        <span class="lbl">참석가정수</span>
+        @Model.Report.atten_family_count
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 DataRow">
+        <span class="lbl">모임장소</span>
+        @Model.Report.cell_place
+    </div>
+    <div class="col-md-6 DataRow">
+        <span class="lbl">새교인</span>
+        @Model.Report.new_member
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 DataRow">
+        <span class="lbl">Memo</span>
+        @Model.Report.memo
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 DataRow">
+        <span class="lbl">요청사항</span>
+        @Model.Report.request
+    </div>
+</div>
+
+    <div style="clear:both; margin-top:20px; height:100%">
+        @if (Model.Members != null)
+        {
+            <div class="CSSTableGenerator" style="clear:both">
+                <table>
+                    <tr>
+                        <td>
+                            교인명
+                        </td>
+                        <td>
+                            성별
+                        </td>
+                        <td>
+                            참석여부
+                        </td>
+                        <td>
+                            불참사유
+                        </td>
+                        <td>
+                            메모
+                        </td>
+                        <td>
+                            Cell
+                        </td>
+                    </tr>
+
+                    @foreach (var m in Model.Members)
+                    {
+
+                        <tr>
+                            <td>
+                                @m.last_name@m.first_name
+                            </td>
+                            <td>
+                                @(m.sex?"남":"여")
+
+                            </td>
+                            <td>
+                                @(m.attendance?"O":"X")
+                            </td>
+                            <td>
+                                @m.reason
+                            </td>
+                            <td>
+                                @m.memo
+                            </td>
+                            <td>
+                                @m.cell
+                            </td>
+                        </tr>
+
+                    }
+                </table>
+            </div>
+        }
+    </div>

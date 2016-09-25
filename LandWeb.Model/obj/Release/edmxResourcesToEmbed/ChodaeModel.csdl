@@ -1,0 +1,774 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ChodaeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ChodaeEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="member_list" ReturnType="Collection(ChodaeModel.member_list_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+      <Parameter Name="memberid" Mode="In" Type="Int32" />
+      <Parameter Name="fullname" Mode="In" Type="String" />
+      <Parameter Name="firstName" Mode="In" Type="String" />
+      <Parameter Name="lastName" Mode="In" Type="String" />
+      <Parameter Name="enFirstName" Mode="In" Type="String" />
+      <Parameter Name="enLastName" Mode="In" Type="String" />
+      <Parameter Name="agefrom" Mode="In" Type="Int32" />
+      <Parameter Name="ageto" Mode="In" Type="Int32" />
+      <Parameter Name="city" Mode="In" Type="String" />
+      <Parameter Name="state" Mode="In" Type="String" />
+      <Parameter Name="baptismId" Mode="In" Type="Int32" />
+      <Parameter Name="sex" Mode="In" Type="Int32" />
+      <Parameter Name="subDivision" Mode="In" Type="Int32" />
+      <Parameter Name="baptismFrom" Mode="In" Type="DateTime" />
+      <Parameter Name="baptismTo" Mode="In" Type="DateTime" />
+      <Parameter Name="regfrom" Mode="In" Type="DateTime" />
+      <Parameter Name="regto" Mode="In" Type="DateTime" />
+      <Parameter Name="status" Mode="In" Type="Int32" />
+      <Parameter Name="jobtype" Mode="In" Type="Int32" />
+      <Parameter Name="birthfrom" Mode="In" Type="DateTime" />
+      <Parameter Name="birthto" Mode="In" Type="DateTime" />
+      <Parameter Name="married" Mode="In" Type="Int32" />
+      <Parameter Name="relationship" Mode="In" Type="Int32" />
+      <Parameter Name="fellowship" Mode="In" Type="Int32" />
+      <Parameter Name="active" Mode="In" Type="Int32" />
+      <Parameter Name="home" Mode="In" Type="String" />
+      <Parameter Name="cellPhone" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="members" EntityType="ChodaeModel.member" />
+    <FunctionImport Name="test" ReturnType="Collection(ChodaeModel.test_Result)" />
+    <FunctionImport Name="justdates" ReturnType="Collection(ChodaeModel.justdates_Result)">
+      <Parameter Name="regfrom" Mode="In" Type="DateTime" />
+      <Parameter Name="regto" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="family_get" ReturnType="Collection(ChodaeModel.family_get_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+      <Parameter Name="memberid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="member_get" ReturnType="Collection(ChodaeModel.member_get_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="subdivision_list" ReturnType="Collection(ChodaeModel.subdivision_list_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="type_baptism_list" ReturnType="Collection(ChodaeModel.type_baptism_list_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="type_job_list" ReturnType="Collection(ChodaeModel.type_job_list_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="address_get" ReturnType="Collection(ChodaeModel.address_get_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="type_status_list" ReturnType="Collection(ChodaeModel.type_status_list_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="type_status_get" ReturnType="Collection(ChodaeModel.type_status_get_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="type_entry_list" ReturnType="Collection(ChodaeModel.type_entry_list_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="fellowship_member_get" ReturnType="Collection(ChodaeModel.fellowship_member_get_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+      <Parameter Name="code" Mode="In" Type="Int32" />
+      <Parameter Name="withHistory" Mode="In" Type="Boolean" />
+      <Parameter Name="from" Mode="In" Type="DateTime" />
+      <Parameter Name="to" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="member_get1" ReturnType="Collection(ChodaeModel.member_get1_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+      <Parameter Name="memberid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="visit_list" ReturnType="Collection(ChodaeModel.visit_list_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+      <Parameter Name="memberid" Mode="In" Type="Int32" />
+      <Parameter Name="cellCode" Mode="In" Type="Int32" />
+      <Parameter Name="visitType" Mode="In" Type="Int32" />
+      <Parameter Name="from" Mode="In" Type="DateTime" />
+      <Parameter Name="to" Mode="In" Type="DateTime" />
+      <Parameter Name="username" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="visit_list_web" ReturnType="Collection(ChodaeModel.visit_list_web_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+      <Parameter Name="memberid" Mode="In" Type="Int32" />
+      <Parameter Name="cellCode" Mode="In" Type="Int32" />
+      <Parameter Name="visitType" Mode="In" Type="Int32" />
+      <Parameter Name="from" Mode="In" Type="DateTime" />
+      <Parameter Name="to" Mode="In" Type="DateTime" />
+      <Parameter Name="username" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="visits" ReturnType="Collection(ChodaeModel.visits_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="memberid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="member_get2" ReturnType="Collection(ChodaeModel.member_get2_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+      <Parameter Name="memberid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="member_get11" ReturnType="Collection(ChodaeModel.member_get11_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+      <Parameter Name="memberid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="comment_list" ReturnType="Collection(ChodaeModel.comment_list_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+      <Parameter Name="memberid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="member_get4" ReturnType="Collection(ChodaeModel.member_get4_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+      <Parameter Name="memberid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="course_get" ReturnType="Collection(ChodaeModel.course_get_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+      <Parameter Name="active" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="course_get1" ReturnType="Collection(ChodaeModel.course_get1_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+      <Parameter Name="active" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="course_get2" ReturnType="Collection(ChodaeModel.course_get2_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+      <Parameter Name="active" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="course_list" ReturnType="Collection(ChodaeModel.course_list_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="ministry_get" ReturnType="Collection(ChodaeModel.ministry_get_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="ministry_role_get" ReturnType="Collection(ChodaeModel.ministry_role_get_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="cell_list" ReturnType="Collection(ChodaeModel.cell_list_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="report_list" ReturnType="Collection(ChodaeModel.report_list_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+      <Parameter Name="code" Mode="In" Type="Int32" />
+      <Parameter Name="from" Mode="In" Type="DateTime" />
+      <Parameter Name="to" Mode="In" Type="DateTime" />
+      <Parameter Name="createby" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="report_get" ReturnType="Collection(ChodaeModel.report_get_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="reportdetail_get" ReturnType="Collection(ChodaeModel.reportdetail_get_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+      <Parameter Name="code" Mode="In" Type="Int32" />
+      <Parameter Name="isNew" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="reportdetailweb_get" ReturnType="Collection(ChodaeModel.reportdetailweb_get_Result)">
+      <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+      <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+      <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+      <Parameter Name="code" Mode="In" Type="Int32" />
+      <Parameter Name="isNew" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <EntitySet Name="users_master" EntityType="ChodaeModel.users_master" />
+  </EntityContainer>
+  <ComplexType Name="member_list_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="last_name" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="first_name" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="en_first_name" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="en_last_name" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="email" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="address" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="city" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="statecode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="zipcode" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="sex" Nullable="false" />
+    <Property Type="Boolean" Name="married" Nullable="true" />
+    <Property Type="String" Name="cell" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="CellName" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="regdate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="birthday" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="baptism_year" Nullable="true" Precision="23" />
+    <Property Type="String" Name="baptismName" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="age" Nullable="true" />
+    <Property Type="String" Name="home" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="job" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FellowshipName" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="fellowship_date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="family_code" Nullable="true" />
+    <Property Type="String" Name="family_name" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="status_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Relationship" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="StatusCode" Nullable="true" />
+    <Property Type="String" Name="StatusName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="SubDivisionName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="spousename" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="spouse" Nullable="true" />
+    <Property Type="Boolean" Name="active" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="member">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="first_name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="last_name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="en_first_name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="en_last_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="cell" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="work_phone" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="sex" Type="Boolean" Nullable="false" />
+    <Property Name="married" Type="Boolean" />
+    <Property Name="family_code" Type="Int32" />
+    <Property Name="family_relationship" Type="Byte" />
+    <Property Name="birthday" Type="DateTime" Precision="3" />
+    <Property Name="regdate" Type="DateTime" Precision="3" />
+    <Property Name="address_id" Type="Int32" />
+    <Property Name="subdiv_id" Type="Int32" />
+    <Property Name="baptism_id" Type="Int32" />
+    <Property Name="baptism_year" Type="DateTime" Precision="3" />
+    <Property Name="job" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="entrytype" Type="Int32" />
+    <Property Name="jobtype" Type="Int32" />
+    <Property Name="spouse" Type="Int32" />
+    <Property Name="active" Type="Boolean" />
+    <Property Name="row_status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Precision="3" />
+    <Property Name="create_by" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="update_date" Type="DateTime" Precision="3" />
+    <Property Name="update_by" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="lastchanged" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <ComplexType Name="test_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="first_name" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="last_name" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="en_first_name" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="en_last_name" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="email" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="cell" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="work_phone" Nullable="true" MaxLength="25" />
+    <Property Type="Boolean" Name="sex" Nullable="false" />
+    <Property Type="Boolean" Name="married" Nullable="true" />
+    <Property Type="Int32" Name="family_code" Nullable="true" />
+    <Property Type="Byte" Name="family_relationship" Nullable="true" />
+    <Property Type="DateTime" Name="birthday" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="regdate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="address_id" Nullable="true" />
+    <Property Type="Int32" Name="subdiv_id" Nullable="true" />
+    <Property Type="Int32" Name="baptism_id" Nullable="true" />
+    <Property Type="DateTime" Name="baptism_year" Nullable="true" Precision="23" />
+    <Property Type="String" Name="job" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="entrytype" Nullable="true" />
+    <Property Type="Int32" Name="jobtype" Nullable="true" />
+    <Property Type="Int32" Name="spouse" Nullable="true" />
+    <Property Type="Boolean" Name="active" Nullable="true" />
+    <Property Type="String" Name="row_status" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="create_by" Nullable="true" MaxLength="150" />
+    <Property Type="DateTime" Name="update_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="update_by" Nullable="true" MaxLength="150" />
+    <Property Type="Binary" Name="lastchanged" Nullable="true" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="justdates_Result">
+    <Property Type="String" Name="first_name" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="last_name" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="en_first_name" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="en_last_name" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="email" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="cell" Nullable="true" MaxLength="15" />
+    <Property Type="Boolean" Name="sex" Nullable="false" />
+    <Property Type="Boolean" Name="married" Nullable="true" />
+    <Property Type="Int32" Name="family_code" Nullable="true" />
+    <Property Type="DateTime" Name="birthday" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="regdate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="baptism_year" Nullable="true" Precision="23" />
+    <Property Type="String" Name="job" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="spousename" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="address" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="city" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="zipcode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="statecode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="home" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="address_id" Nullable="true" />
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="entrytype" Nullable="true" />
+    <Property Type="Int32" Name="jobtype" Nullable="true" />
+    <Property Type="Int32" Name="spouse" Nullable="true" />
+    <Property Type="Boolean" Name="active" Nullable="true" />
+    <Property Type="String" Name="family_name" Nullable="true" MaxLength="25" />
+    <Property Type="Int32" Name="cell_code" Nullable="true" />
+    <Property Type="DateTime" Name="fellowship_date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="fellowship_code" Nullable="true" />
+    <Property Type="Int32" Name="StatusCode" Nullable="true" />
+    <Property Type="DateTime" Name="status_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="StatusName" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="FellowshipName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Relationship" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="subdiv_id" Nullable="true" />
+    <Property Type="Int32" Name="baptism_id" Nullable="true" />
+    <Property Type="Byte" Name="family_relationship" Nullable="true" />
+    <Property Type="String" Name="BaptismName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="SubDivisionName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="CellName" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="CellRoleCode" Nullable="true" />
+    <Property Type="String" Name="work_phone" Nullable="true" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="family_get_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="last_name" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="first_name" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="en_first_name" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="en_last_name" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="email" Nullable="true" MaxLength="150" />
+    <Property Type="Boolean" Name="sex" Nullable="false" />
+    <Property Type="Boolean" Name="married" Nullable="true" />
+    <Property Type="String" Name="cell" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="CellName" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="regdate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="birthday" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="baptism_year" Nullable="true" Precision="23" />
+    <Property Type="String" Name="baptismName" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="age" Nullable="true" />
+    <Property Type="String" Name="home" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="job" Nullable="true" MaxLength="50" />
+    <Property Type="Byte" Name="family_relationship" Nullable="true" />
+    <Property Type="Int32" Name="family_code" Nullable="true" />
+    <Property Type="String" Name="family_name" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="status_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Relationship" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="StatusCode" Nullable="true" />
+    <Property Type="String" Name="StatusName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="SubDivisionName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="spousename" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="spouse" Nullable="true" />
+    <Property Type="Boolean" Name="active" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="member_get_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="first_name" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="last_name" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="en_first_name" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="en_last_name" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="email" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="cell" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="work_phone" Nullable="true" MaxLength="25" />
+    <Property Type="Boolean" Name="sex" Nullable="false" />
+    <Property Type="Boolean" Name="married" Nullable="true" />
+    <Property Type="Int32" Name="family_code" Nullable="true" />
+    <Property Type="Byte" Name="family_relationship" Nullable="true" />
+    <Property Type="DateTime" Name="birthday" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="regdate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="address_id" Nullable="true" />
+    <Property Type="Int32" Name="subdiv_id" Nullable="true" />
+    <Property Type="Int32" Name="baptism_id" Nullable="true" />
+    <Property Type="DateTime" Name="baptism_year" Nullable="true" Precision="23" />
+    <Property Type="String" Name="job" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="entrytype" Nullable="true" />
+    <Property Type="Int32" Name="jobtype" Nullable="true" />
+    <Property Type="Int32" Name="spouse" Nullable="true" />
+    <Property Type="Boolean" Name="active" Nullable="true" />
+    <Property Type="String" Name="row_status" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="create_by" Nullable="true" MaxLength="150" />
+    <Property Type="DateTime" Name="update_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="update_by" Nullable="true" MaxLength="150" />
+    <Property Type="Binary" Name="lastchanged" Nullable="true" MaxLength="8" />
+    <Property Type="Int32" Name="MemberId" Nullable="false" />
+    <Property Type="Int32" Name="FellowshipCode" Nullable="true" />
+    <Property Type="Int32" Name="CellCode" Nullable="true" />
+    <Property Type="String" Name="FamilyName" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="FellowshipStartdate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="StatusCode" Nullable="true" />
+    <Property Type="DateTime" Name="StatusChanged" Nullable="true" Precision="23" />
+    <Property Type="String" Name="StatusName" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="CellName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="FellowshipName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Relationship" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="CellRoleCode" Nullable="true" />
+    <Property Type="String" Name="ministry" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="subdivision_list_Result">
+    <Property Type="Int32" Name="id" Nullable="true" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="parentid" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="type_baptism_list_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="type_job_list_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="address_get_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="address" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="city" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="statecode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="zipcode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="home" Nullable="true" MaxLength="15" />
+    <Property Type="Binary" Name="lastchanged" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="update_by" Nullable="true" MaxLength="150" />
+    <Property Type="DateTime" Name="update_date" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="type_status_list_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="160" />
+  </ComplexType>
+  <ComplexType Name="type_status_get_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="150" />
+    <Property Type="Boolean" Name="is_active" Nullable="false" />
+    <Property Type="String" Name="row_status" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="update_by" Nullable="true" MaxLength="150" />
+    <Property Type="DateTime" Name="update_date" Nullable="true" Precision="23" />
+    <Property Type="Binary" Name="lastchanged" Nullable="true" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="type_entry_list_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="fellowship_member_get_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="fellowship_code" Nullable="false" />
+    <Property Type="DateTime" Name="enddate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="startdate" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="memberid" Nullable="false" />
+    <Property Type="String" Name="last_name" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="first_name" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="en_first_name" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="en_last_name" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="email" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="address" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="city" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="statecode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="zipcode" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="sex" Nullable="false" />
+    <Property Type="String" Name="cell" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="regdate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="baptism_year" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="age" Nullable="true" />
+    <Property Type="String" Name="home" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="birthday" Nullable="true" Precision="23" />
+    <Property Type="String" Name="job" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="family_code" Nullable="true" />
+    <Property Type="String" Name="cellname" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="relationship" Nullable="true" MaxLength="10" />
+    <Property Type="Boolean" Name="married" Nullable="true" />
+    <Property Type="String" Name="BaptismName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="SubDivisionName" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="StatusCode" Nullable="true" />
+    <Property Type="String" Name="family_name" Nullable="true" MaxLength="25" />
+    <Property Type="Int32" Name="spouse" Nullable="true" />
+    <Property Type="String" Name="spousename" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="active" Nullable="true" />
+    <Property Type="String" Name="update_by" Nullable="true" MaxLength="150" />
+    <Property Type="Binary" Name="lastchanged" Nullable="true" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="member_get1_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="fellowship" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="startdate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="enddate" Nullable="true" Precision="23" />
+    <Property Type="Binary" Name="lastchanged" Nullable="true" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="visit_list_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="bible" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="contents" Nullable="true" />
+    <Property Type="String" Name="pastor" Nullable="false" MaxLength="20" />
+    <Property Type="Int32" Name="memberid" Nullable="false" />
+    <Property Type="String" Name="song" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="first_name" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="last_name" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="CellName" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="visitdate" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="visittype" Nullable="false" />
+    <Property Type="String" Name="attendent" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="VisitTypeName" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="visit_list_web_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="bible" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="contents" Nullable="true" />
+    <Property Type="String" Name="pastor" Nullable="false" MaxLength="20" />
+    <Property Type="Int32" Name="memberid" Nullable="false" />
+    <Property Type="String" Name="song" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="first_name" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="last_name" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="CellName" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="visitdate" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="visittype" Nullable="false" />
+    <Property Type="String" Name="attendent" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="VisitTypeName" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="visits_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="bible" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="contents" Nullable="true" />
+    <Property Type="String" Name="pastor" Nullable="false" MaxLength="20" />
+    <Property Type="Int32" Name="memberid" Nullable="false" />
+    <Property Type="String" Name="song" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="first_name" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="last_name" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="CellName" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="visitdate" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="visittype" Nullable="false" />
+    <Property Type="String" Name="attendent" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="VisitTypeName" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="member_get2_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="cellname" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="rolename" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="startdate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="enddate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="role_code" Nullable="true" />
+    <Property Type="Int32" Name="cell_code" Nullable="false" />
+    <Property Type="Binary" Name="lastchanged" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="member_get11_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="memberid" Nullable="false" />
+    <Property Type="Int32" Name="course_code" Nullable="true" />
+    <Property Type="DateTime" Name="graduated" Nullable="false" Precision="23" />
+    <Property Type="Binary" Name="lastchanged" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="row_status" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="update_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="update_by" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="comment_list_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="comment" Nullable="false" MaxLength="Max" />
+    <Property Type="DateTime" Name="regdate" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="memberid" Nullable="false" />
+    <Property Type="String" Name="create_by" Nullable="true" MaxLength="150" />
+    <Property Type="DateTime" Name="update_date" Nullable="true" Precision="23" />
+    <Property Type="Binary" Name="lastchanged" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="row_status" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="update_by" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="member_get4_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="ministry_code" Nullable="false" />
+    <Property Type="Int32" Name="role_code" Nullable="true" />
+    <Property Type="Int32" Name="memberid" Nullable="false" />
+    <Property Type="DateTime" Name="startdate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="enddate" Nullable="true" Precision="23" />
+    <Property Type="Binary" Name="lastchanged" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="row_status" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="update_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="update_by" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="course_get_Result">
+    <Property Type="Int32" Name="code" Nullable="false" />
+    <Property Type="Int32" Name="parent_code" Nullable="true" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="150" />
+    <Property Type="Binary" Name="lastchanged" Nullable="false" MaxLength="8" />
+    <Property Type="DateTime" Name="regdate" Nullable="false" Precision="23" />
+    <Property Type="Boolean" Name="active" Nullable="true" />
+    <Property Type="String" Name="row_status" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="update_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="update_by" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="sort" Nullable="true" />
+    <Property Type="Int32" Name="total" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="course_get1_Result">
+    <Property Type="Int32" Name="code" Nullable="false" />
+    <Property Type="Int32" Name="parent_code" Nullable="true" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="150" />
+    <Property Type="Binary" Name="lastchanged" Nullable="false" MaxLength="8" />
+    <Property Type="DateTime" Name="regdate" Nullable="false" Precision="23" />
+    <Property Type="Boolean" Name="active" Nullable="true" />
+    <Property Type="String" Name="row_status" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="update_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="update_by" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="sort" Nullable="true" />
+    <Property Type="Int32" Name="total" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="course_get2_Result">
+    <Property Type="Int32" Name="code" Nullable="false" />
+    <Property Type="Int32" Name="parent_code" Nullable="true" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="150" />
+    <Property Type="Binary" Name="lastchanged" Nullable="false" MaxLength="8" />
+    <Property Type="DateTime" Name="regdate" Nullable="false" Precision="23" />
+    <Property Type="Boolean" Name="active" Nullable="true" />
+    <Property Type="String" Name="row_status" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="update_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="update_by" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="sort" Nullable="true" />
+    <Property Type="Int32" Name="total" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="course_list_Result">
+    <Property Type="Int32" Name="code" Nullable="true" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="parentid" Nullable="true" />
+    <Property Type="String" Name="sort" Nullable="true" />
+    <Property Type="Int32" Name="assigned" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ministry_get_Result">
+    <Property Type="Int32" Name="code" Nullable="false" />
+    <Property Type="Int32" Name="parent_code" Nullable="true" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="create_date" Nullable="false" Precision="23" />
+    <Property Type="String" Name="update_by" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="row_status" Nullable="true" MaxLength="1" />
+    <Property Type="Binary" Name="lastchanged" Nullable="true" MaxLength="8" />
+    <Property Type="Int32" Name="total_assign" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ministry_role_get_Result">
+    <Property Type="Int32" Name="code" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="20" />
+    <Property Type="Boolean" Name="isdefault" Nullable="true" />
+    <Property Type="String" Name="create_by" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="update_by" Nullable="true" MaxLength="150" />
+    <Property Type="DateTime" Name="update_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="row_status" Nullable="true" MaxLength="1" />
+    <Property Type="Binary" Name="lastchanged" Nullable="true" MaxLength="8" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="cell_list_Result">
+    <Property Type="Int32" Name="code" Nullable="true" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="report_list_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="DateTime" Name="reg_date" Nullable="false" Precision="23" />
+    <Property Type="String" Name="request" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="leader" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="cell_date" Nullable="false" Precision="23" />
+    <Property Type="String" Name="cell_place" Nullable="false" MaxLength="150" />
+    <Property Type="Int32" Name="attendance" Nullable="false" />
+    <Property Type="String" Name="new_member" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="atten_family_count" Nullable="false" />
+    <Property Type="Int32" Name="memberno" Nullable="false" />
+    <Property Type="String" Name="cell" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="memo" Nullable="true" MaxLength="Max" />
+  </ComplexType>
+  <ComplexType Name="report_get_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="DateTime" Name="reg_date" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="cell_date" Nullable="false" Precision="23" />
+    <Property Type="String" Name="cell_place" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="new_member" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="leader" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="prayer" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="memo" Nullable="true" MaxLength="Max" />
+    <Property Type="Binary" Name="lastchanged" Nullable="false" MaxLength="8" />
+    <Property Type="Int32" Name="cell_code" Nullable="false" />
+    <Property Type="String" Name="request" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="atten_family_count" Nullable="false" />
+    <Property Type="Int32" Name="recoder" Nullable="true" />
+    <Property Type="DateTime" Name="update_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="update_by" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="row_status" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="total_family_count" Nullable="true" />
+    <Property Type="String" Name="cell_leader" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="cell_leader2" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="create_by" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="CellName" Nullable="false" MaxLength="150" />
+    <Property Type="Int32" Name="atten_count" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="reportdetail_get_Result">
+    <Property Type="Int32" Name="member_id" Nullable="false" />
+    <Property Type="String" Name="first_name" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="last_name" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="cell" Nullable="true" MaxLength="15" />
+    <Property Type="Boolean" Name="sex" Nullable="false" />
+    <Property Type="Int32" Name="role_code" Nullable="true" />
+    <Property Type="Int32" Name="role_level" Nullable="true" />
+    <Property Type="Int32" Name="family_code" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="reportdetailweb_get_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="member_id" Nullable="false" />
+    <Property Type="Boolean" Name="attendance" Nullable="false" />
+    <Property Type="String" Name="reason" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="parent_id" Nullable="true" />
+    <Property Type="String" Name="memo" Nullable="true" MaxLength="255" />
+    <Property Type="DateTime" Name="regdate" Nullable="false" Precision="23" />
+    <Property Type="Binary" Name="lastchanged" Nullable="true" MaxLength="8" />
+    <Property Type="Int32" Name="role_level" Nullable="true" />
+    <Property Type="Int32" Name="role_code" Nullable="true" />
+    <Property Type="String" Name="row_status" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="first_name" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="last_name" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="cell" Nullable="true" MaxLength="15" />
+    <Property Type="Boolean" Name="sex" Nullable="false" />
+    <Property Type="Int32" Name="family_code" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="users_master">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="password" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="regdate" Type="DateTime" Precision="3" />
+    <Property Name="lastlogin" Type="DateTime" Precision="3" />
+    <Property Name="divs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="roles" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lastchanged" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="update_date" Type="DateTime" Precision="3" />
+    <Property Name="update_by" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

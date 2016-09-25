@@ -1,0 +1,10 @@
+C:\Users\ChodaeMedia\CloudStation\LandWeb\LandWeb.Model\bin\Release\LandWeb.Model.dll.config
+C:\Users\ChodaeMedia\CloudStation\LandWeb\LandWeb.Model\bin\Release\LandWeb.Model.dll
+C:\Users\ChodaeMedia\CloudStation\LandWeb\LandWeb.Model\bin\Release\LandWeb.Model.pdb
+C:\Users\ChodaeMedia\CloudStation\LandWeb\LandWeb.Model\bin\Release\EntityFramework.dll
+C:\Users\ChodaeMedia\CloudStation\LandWeb\LandWeb.Model\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\ChodaeMedia\CloudStation\LandWeb\LandWeb.Model\bin\Release\EntityFramework.xml
+C:\Users\ChodaeMedia\CloudStation\LandWeb\LandWeb.Model\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\ChodaeMedia\CloudStation\LandWeb\LandWeb.Model\obj\Release\LandWeb.Model.csprojResolveAssemblyReference.cache
+C:\Users\ChodaeMedia\CloudStation\LandWeb\LandWeb.Model\obj\Release\LandWeb.Model.dll
+C:\Users\ChodaeMedia\CloudStation\LandWeb\LandWeb.Model\obj\Release\LandWeb.Model.pdb

@@ -1,0 +1,500 @@
+﻿@model LandWeb.Models.MemberViewModel
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Back = true;
+}
+
+<style type="text/css">
+    .CSSTableGenerator tr:first-child td{
+        font-size:12px !important;
+    }
+    .footer{
+        position:relative !important;
+    }
+    a.cell{
+        color:red !important;
+    }
+</style>
+
+<div class="col-md-2 family" style="padding-bottom:30px">
+    @foreach (var photo in Model.Photos)
+    {
+        <div class="photoBorder">
+            <div style="clear:both; min-height:128px">
+                <div class="imgDiv">
+                    <div><b>@photo.id/@photo.last_name@photo.first_name</b> (@photo.Relationship)</div>
+                    <a href="@Url.Action("Detail", "Member", new { ID = photo.id })#memberTop">
+                        <img src="~/MemberImage/@(photo.id).jpg" style="max-height:128px" onerror="this.onerror=null;this.src='/Content/images/noimage.jpg'" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<div class="col-md-10 family" style="padding-bottom: 0px" id="memberTop">
+    <div class="col-md-12" style="position:absolute;font-weight:bold">
+        Member Information
+    </div>
+
+    <div class="col-md-2" style="margin-top:20px">
+        <div class="photoBorder">
+            <div style="min-height:128px">
+                <div class="imgDiv">
+                    <img src="~/MemberImage/@(Model.Member.id).jpg" style="max-height:128px" onerror="this.onerror=null;this.src='/Content/images/noimage.jpg'" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-10" style="font-size:12px; padding-top:5px; margin-top:20px">
+        <div class="col-md-3 DataRow" style="clear:left">
+            <span class="lbl">교번</span>
+            @Model.Member.id
+        </div>
+        <div class="col-md-3 DataRow">
+            <span class="lbl">성</span>
+            @Model.Member.last_name
+        </div>
+        <div class="col-md-3 DataRow">
+            <span class="lbl">이름</span>
+            @Model.Member.first_name
+        </div>
+        <div class="col-md-3 DataRow">
+            <span class="lbl">생년월일</span>
+            @Model.Birthday.ToShortDateString()
+        </div>
+        <div class="col-md-3 DataRow">
+            <span class="lbl">등록일</span>
+            @Model.RegDate.ToShortDateString()
+        </div>
+        <div class="col-md-3 DataRow">
+            <span class="lbl">세대주</span>
+            @Model.Member.FamilyName
+        </div>
+        <div class="col-md-6 DataRow">
+            <span class="lbl">이메일</span>
+            @Model.Member.email
+        </div>
+
+
+        <div class="col-md-3 DataRow">
+            <span class="lbl">가족관계</span>
+            @Model.Member.Relationship
+        </div>
+        <div class="col-md-3 DataRow">
+            <span class="lbl">교적구분</span>
+            @Model.SubDivision
+        </div>
+        <div class="col-md-3 DataRow">
+            <span class="lbl">Last</span>
+            @Model.Member.en_last_name
+        </div>
+        <div class="col-md-3 DataRow">
+            <span class="lbl">First</span>
+            @Model.Member.en_first_name
+        </div>
+        <div class="col-md-3 DataRow">
+            <span class="lbl">성별</span>
+            @Model.Sex
+        </div>
+        <div class="col-md-3 DataRow">
+            <span class="lbl">직업</span>
+            @Model.Member.job
+        </div>
+
+        <div class="col-md-3 DataRow">
+            <span class="lbl">결혼여부</span>
+            @Model.Married
+        </div>
+
+        <div class="col-md-3 DataRow">
+            <span class="lbl">Work</span>
+            @Model.Member.work_phone
+        </div>
+
+        <div class="col-md-3 DataRow">
+            <span class="lbl">핸드폰</span>
+            @Model.Member.cell
+        </div>
+
+        <div class="col-md-3 DataRow">
+            <span class="lbl">신급</span>
+            @Model.Baptism
+        </div>
+
+        <div class="col-md-3 DataRow">
+            <span class="lbl">세례년도</span>
+            @Model.BaptismDate
+        </div>
+
+        <div class="col-md-3 DataRow">
+            <span class="lbl">직종</span>
+            @Model.JobType
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-10 family" style="padding-bottom: 0px">
+    <div class="col-md-12" style="position:absolute; font-weight:bold">
+        Address Information
+    </div>
+    <div class="col-md-12" style="font-size:12px; padding-top:5px; margin-top:20px">
+        <div class="col-md-3 DataRow" style="clear:left">
+            <span class="lbl">Street</span>
+            @Model.Address.address
+        </div>
+        <div class="col-md-2 DataRow">
+            <span class="lbl">City</span>
+            @Model.Address.city
+        </div>
+        <div class="col-md-2 DataRow">
+            <span class="lbl">State</span>
+            @Model.Address.statecode
+        </div>
+        <div class="col-md-2 DataRow">
+            <span class="lbl">Zip</span>
+            @Model.Address.zipcode
+        </div>
+        <div class="col-md-3 DataRow">
+            <span class="lbl">Home</span>
+            @Model.Address.home
+        </div>
+    </div>
+
+</div>
+
+<div class="col-md-10 family" style="padding-bottom: 0px">
+    <div class="col-md-12" style="position:absolute; font-weight:bold">
+        Additional Information
+    </div>
+    <div class="col-md-12" style="font-size:12px; padding-top:5px; margin-top:20px">
+        <div class="col-md-2 DataRow" style="clear:left">
+            <span class="lbl">교적상태</span>
+            @Model.Status
+        </div>
+        <div class="col-md-2 DataRow">
+            <span class="lbl">변경일</span>
+            @Model.StatusChanged.ToShortDateString()
+        </div>
+        <div class="col-md-2 DataRow">
+            <span class="lbl">원입구분</span>
+            @Model.EntryType
+        </div>
+        <div class="col-md-2 DataRow">
+            <span class="lbl">직분</span>
+            @Model.Member.FellowshipName
+        </div>
+        <div class="col-md-2 DataRow">
+            <span class="lbl">순명</span>
+            @if (!String.IsNullOrEmpty(Model.Member.CellName))
+            {
+                @Html.ActionLink(Model.Member.CellName, "Get", "CellReport", new { cellCode = Model.Member.CellCode }, new { @class = "cell" })
+            }
+        </div>
+        <div class="col-md-2 DataRow">
+            <span class="lbl">사역</span>
+            @Model.Member.ministry
+        </div>
+    </div>
+
+</div>
+
+
+<div class="col-md-10 family" style="padding-bottom: 15px">
+    <div class="col-md-12" style="font-weight:bold">
+        심방 내역
+    </div>
+    <div class="col-md-12" style="display:@(Model.Visits != null && Model.Visits.Count() == 0 ? "block" : "none")">
+        No Data
+    </div>
+    <div class="col-md-12" style="font-size:12px; padding-top:5px; margin-top:20px">
+    @if (Model.Visits != null && Model.Visits.Count() > 0)
+        {
+            <div class="CSSTableGenerator" style="clear:both">
+                <table>
+                    <tr>
+                        <td>
+                            날짜
+                        </td>
+                        <td>
+                            종류
+                        </td>
+                        <td>
+                            심방자
+                        </td>
+                        <td>
+                            심방내용
+                        </td>
+                    </tr>
+
+                    @foreach (var visit in Model.Visits)
+                {
+
+                        <tr>
+                            <td>
+                                @visit.visitdate.ToShortDateString()
+                            </td>
+                            <td>
+                                @visit.visittype
+
+                            </td>
+                            <td>
+                                @visit.pastor
+                            </td>
+                            <td>
+                                @visit.contents
+                            </td>
+                        </tr>
+
+                    }
+                </table>
+            </div>
+        }
+    </div>  
+</div>
+
+<div class="col-md-5 family" style="padding-bottom: 15px">
+    <div class="col-md-12" style="font-weight:bold">
+        직분
+    </div>
+    <div class="col-md-12" style="display:@(Model.Fellowships != null && Model.Fellowships.Count() == 0 ? "block" : "none")">
+        No Data
+    </div>
+    <div class="col-md-12" style="font-size:12px; padding-top:5px; margin-top:20px">
+
+            @if (Model.Fellowships != null && Model.Fellowships.Count() > 0)
+            {
+            <div class="CSSTableGenerator" style="clear:both">
+                <table>
+                    <tr>
+                        <td>
+                            직분명
+                        </td>
+                        <td>
+                            Start
+                        </td>
+                        <td>
+                            End
+                        </td>
+                    </tr>
+
+                    @foreach (var f in Model.Fellowships)
+                {
+
+                        <tr>
+                            <td>
+                                @f.fellowship
+                            </td>
+                            <td>
+                                @f.startdate.ToShortDateString()
+
+                            </td>
+                            <td>
+                                @(Convert.ToDateTime(f.enddate) >= Convert.ToDateTime("1900-01-01") ? Convert.ToDateTime(f.enddate).ToShortDateString() : "")
+                            </td>
+                        </tr>
+
+                    }
+                </table>
+            </div>
+        }
+    </div>
+
+
+    <div class="col-md-12" style="font-weight:bold; padding-top:15px;">
+        교육
+    </div>
+    <div class="col-md-12" style="display:@(Model.Courses != null && Model.Courses.Count() == 0 ? "block" : "none")">
+        No Data
+    </div>
+    <div class="col-md-12" style="font-size:12px; padding-top:5px; margin-top:5px">
+
+           @if (Model.Courses != null && Model.Courses.Count() > 0)
+            {
+            <div class="CSSTableGenerator" style="clear:both">
+                <table>
+                    <tr>
+                        <td>
+                            교육과정
+                        </td>
+                        <td>
+                            졸업일
+                        </td>
+                    </tr>
+
+                    @foreach (var c in Model.Courses)
+                {
+
+                        <tr>
+                            <td>
+                                @c.CourseName
+                            </td>
+                            <td>
+                                @Convert.ToDateTime(c.graduated).ToShortDateString()
+                            </td>
+                        </tr>
+
+                    }
+                </table>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="col-md-5 family" style="padding-bottom: 15px">
+    <div class="col-md-12" style="font-weight:bold">
+        순
+    </div>
+    <div class="col-md-12" style="display:@(Model.Cells != null && Model.Cells.Count() == 0 ? "block" : "none")">
+        No Data
+    </div>
+    <div class="col-md-12" style="font-size:12px; padding-top:5px; margin-top:20px">
+
+        @if (Model.Cells != null && Model.Cells.Count() > 0)
+        {
+            <div class="CSSTableGenerator" style="clear:both">
+                <table>
+                    <tr>
+                        <td>
+                            순명
+                        </td>
+                        <td>
+                            순직책
+                        </td>
+                        <td>
+                            Start
+                        </td>
+                        <td>
+                            End
+                        </td>
+                    </tr>
+
+                    @foreach (var c in Model.Cells)
+                {
+
+                        <tr>
+                            <td>
+                                @c.cellname
+                            </td>
+                            <td>
+                                @c.rolename
+
+                            </td>
+                            <td>
+                                @Convert.ToDateTime(c.startdate).ToShortDateString()
+                            </td>
+                            <td>
+                                @(Convert.ToDateTime(c.enddate) >= Convert.ToDateTime("1900-01-01") ? Convert.ToDateTime(c.enddate).ToShortDateString() : "")
+                            </td>
+                        </tr>
+
+                    }
+                </table>
+            </div>
+        }
+    </div>
+
+
+    <div class="col-md-12" style="font-weight:bold; padding-top:15px;">
+        사역
+    </div>
+    <div class="col-md-12" style="display:@(Model.Ministries != null && Model.Ministries.Count() == 0 ? "block" : "none")">
+        No Data
+    </div>
+    <div class="col-md-12" style="font-size:12px; padding-top:5px; margin-top:5px;">
+
+        @if (Model.Ministries != null && Model.Ministries.Count() > 0 )
+        {
+            <div class="CSSTableGenerator" style="clear:both">
+                <table>
+                    <tr>
+                        <td>
+                            사역명
+                        </td>
+                        <td>
+                            직책
+                        </td>
+                        <td>
+                            Start
+                        </td>
+                        <td>
+                            End
+                        </td>
+
+                    </tr>
+
+                    @foreach (var m in Model.Ministries)
+                {
+
+                        <tr>
+                            <td>
+                                @m.MinistryName
+                            </td>
+                            <td>
+                                @m.MinistryRole
+                            </td>
+                            <td>
+                                @Convert.ToDateTime(m.startdate).ToShortDateString()
+                            </td>
+                            <td>
+                                @(Convert.ToDateTime(m.enddate) >= Convert.ToDateTime("1900-01-01") ? Convert.ToDateTime(m.enddate).ToShortDateString() : "")
+                            </td>
+                        </tr>
+
+                    }
+                </table>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="col-md-10 family" style="padding-bottom: 15px">
+    <div class="col-md-12" style="font-weight:bold">
+        비고 사항
+    </div>
+    <div class="col-md-12" style="display:@(Model.Comments != null && Model.Comments.Count() == 0 ? "block" : "none")">
+        No Data
+    </div>
+    <div class="col-md-12" style="font-size:12px; padding-top:5px; margin-top:20px">
+
+        @if (Model.Comments != null && Model.Comments.Count() > 0)
+        {
+            <div class="CSSTableGenerator" style="clear:both">
+                <table>
+                    <tr>
+                        <td>
+                            ID
+                        </td>
+                        <td>
+                            Comment
+                        </td>
+                        <td>
+                            Last Update
+                        </td>
+                    </tr>
+
+                    @foreach (var c in Model.Comments)
+                    {
+
+                        <tr>
+                            <td>
+                                @c.id
+                            </td>
+                            <td>
+                                @c.comment
+
+                            </td>
+                            <td>
+                                @Convert.ToDateTime(c.update_date).ToShortDateString()
+                            </td>
+                        </tr>
+
+                    }
+                </table>
+            </div>
+        }
+    </div>
+</div>
+
+<br /><br />

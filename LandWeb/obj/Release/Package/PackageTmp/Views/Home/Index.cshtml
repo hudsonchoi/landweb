@@ -1,0 +1,44 @@
+﻿@using LandWeb.Models;
+@model DashboardViewModel
+@{
+    ViewBag.Title = "Home Page";
+    ViewBag.Back = false;
+}
+<style type="text/css">
+    .footer {
+        position: relative !important;
+    }
+</style>
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-sm-12 top-field">
+            등록기간: @Html.DropDownList("Registration", Model.RegistrationPeriodList, new { @onchange = "this.form.submit();" })
+        </div>
+    </div>
+}
+    <div style="clear:both">
+        @foreach (var member in Model.Members)
+        {
+            @*@member.first_name<br/>*@
+            <div class="col-md-6">
+                <div style="clear:both; min-height:128px">
+                    <div class="col-xs-5 imgDiv">
+                        <a href="@Url.Action("Detail", "Member", new { ID = member.id })">
+                            <img src="~/MemberImage/@(member.id).jpg" style="max-height:128px" onerror="this.onerror=null;this.src='/Content/images/noimage.jpg'" />
+                        </a>
+                    </div>
+                    <div class="col-xs-7" style="padding-left:17px;padding-top:10px;min-width:150px">
+                        <b>@Html.ActionLink(member.last_name + member.first_name, "Detail", "Member", new { ID = member.id }, null)</b><br />
+                        <div style="font-size:12px">
+                            ID: @member.id <br />
+                            Home: @member.home<br />
+                            <a href="mailto:@member.email">@member.email</a><br />
+                            @member.address<br />
+                            @member.city, @member.statecode @member.zipcode
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>

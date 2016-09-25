@@ -1,0 +1,94 @@
+﻿@model LandWeb.Models.CellReportViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    .CSSTableGenerator tr:first-child td {
+        font-size: 12px !important;
+    }
+    .clickable-row{cursor:pointer}
+     @if (Model.Reports != null)
+     {
+         @Html.Raw(".footer {position: relative !important; margin-top:20px}")
+     }
+
+</style>
+<script>
+    $(function () {
+        $("#CellCode option:first").prop("disabled", true);
+        $(".clickable-row").click(function () {
+            window.document.location = $(this).data("href");
+        });
+     });
+</script>
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-sm-4 top-field">From @Html.TextBoxFor(m => m.From)</div>
+        <div class="col-sm-4 top-field">To @Html.TextBoxFor(m => m.To)</div>
+        <div class="col-sm-4 top-field">순: @Html.DropDownListFor(m => m.CellCode, new SelectList(Model.CellList.Items, "Value", "Text"), new { onchange = "this.form.submit();" })</div>
+    </div>
+}
+
+<div style="clear:both; margin-top:20px; height:100%">
+    @if (Model.Reports != null)
+    {
+        <div class="CSSTableGenerator" style="clear:both">
+            <table>
+                <tr>
+                    <td>
+                        ID
+                    </td>
+                    <td>
+                        순모임일
+                    </td>
+                    <td>
+                        인도자
+                    </td>
+                    <td>
+                        순모임 장소
+                    </td>
+                    <td>
+                        등록인수
+                    </td>
+                    <td>
+                        참석수
+                    </td>
+                    <td>
+                        참석가정수
+                    </td>
+                </tr>
+
+                @foreach (var report in Model.Reports)
+                {
+
+                    <tr class="clickable-row" data-href='@Url.Action("Detail", "CellReport", new { cellCode = report.Id })'>
+                        <td>
+                            @report.Id
+                        </td>
+                        <td>
+                            @report.cell_date.ToShortDateString()
+                        </td>
+                        <td>
+                            @report.leader
+                        </td>
+                        <td>
+                            @report.cell_place
+                        </td>
+                        <td>
+                            @report.memberno
+                        </td>
+                        <td>
+                            @report.attendance
+                        </td>
+                        <td>
+                            @report.atten_family_count
+                        </td>
+                    </tr>
+
+                }
+            </table>
+        </div>
+    }
+</div>

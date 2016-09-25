@@ -1,0 +1,499 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ChodaeModelStoreContainer" CdmEntityContainer="ChodaeEntities">
+    <FunctionImportMapping FunctionImportName="member_list" FunctionName="ChodaeModel.Store.member_list">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChodaeModel.member_list_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="en_first_name" ColumnName="en_first_name" />
+          <ScalarProperty Name="en_last_name" ColumnName="en_last_name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="statecode" ColumnName="statecode" />
+          <ScalarProperty Name="zipcode" ColumnName="zipcode" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="married" ColumnName="married" />
+          <ScalarProperty Name="cell" ColumnName="cell" />
+          <ScalarProperty Name="CellName" ColumnName="CellName" />
+          <ScalarProperty Name="regdate" ColumnName="regdate" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="baptism_year" ColumnName="baptism_year" />
+          <ScalarProperty Name="baptismName" ColumnName="baptismName" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="home" ColumnName="home" />
+          <ScalarProperty Name="job" ColumnName="job" />
+          <ScalarProperty Name="FellowshipName" ColumnName="FellowshipName" />
+          <ScalarProperty Name="fellowship_date" ColumnName="fellowship_date" />
+          <ScalarProperty Name="family_code" ColumnName="family_code" />
+          <ScalarProperty Name="family_name" ColumnName="family_name" />
+          <ScalarProperty Name="status_date" ColumnName="status_date" />
+          <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+          <ScalarProperty Name="SubDivisionName" ColumnName="SubDivisionName" />
+          <ScalarProperty Name="spousename" ColumnName="spousename" />
+          <ScalarProperty Name="spouse" ColumnName="spouse" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="members">
+      <EntityTypeMapping TypeName="ChodaeModel.member">
+        <MappingFragment StoreEntitySet="members">
+          <ScalarProperty Name="lastchanged" ColumnName="lastchanged" />
+          <ScalarProperty Name="update_by" ColumnName="update_by" />
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="create_by" ColumnName="create_by" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="row_status" ColumnName="row_status" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="spouse" ColumnName="spouse" />
+          <ScalarProperty Name="jobtype" ColumnName="jobtype" />
+          <ScalarProperty Name="entrytype" ColumnName="entrytype" />
+          <ScalarProperty Name="job" ColumnName="job" />
+          <ScalarProperty Name="baptism_year" ColumnName="baptism_year" />
+          <ScalarProperty Name="baptism_id" ColumnName="baptism_id" />
+          <ScalarProperty Name="subdiv_id" ColumnName="subdiv_id" />
+          <ScalarProperty Name="address_id" ColumnName="address_id" />
+          <ScalarProperty Name="regdate" ColumnName="regdate" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="family_relationship" ColumnName="family_relationship" />
+          <ScalarProperty Name="family_code" ColumnName="family_code" />
+          <ScalarProperty Name="married" ColumnName="married" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="work_phone" ColumnName="work_phone" />
+          <ScalarProperty Name="cell" ColumnName="cell" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="en_last_name" ColumnName="en_last_name" />
+          <ScalarProperty Name="en_first_name" ColumnName="en_first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="family_get" FunctionName="ChodaeModel.Store.family_get">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChodaeModel.family_get_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="en_first_name" ColumnName="en_first_name" />
+          <ScalarProperty Name="en_last_name" ColumnName="en_last_name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="married" ColumnName="married" />
+          <ScalarProperty Name="cell" ColumnName="cell" />
+          <ScalarProperty Name="CellName" ColumnName="CellName" />
+          <ScalarProperty Name="regdate" ColumnName="regdate" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="baptism_year" ColumnName="baptism_year" />
+          <ScalarProperty Name="baptismName" ColumnName="baptismName" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="home" ColumnName="home" />
+          <ScalarProperty Name="job" ColumnName="job" />
+          <ScalarProperty Name="family_relationship" ColumnName="family_relationship" />
+          <ScalarProperty Name="family_code" ColumnName="family_code" />
+          <ScalarProperty Name="family_name" ColumnName="family_name" />
+          <ScalarProperty Name="status_date" ColumnName="status_date" />
+          <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+          <ScalarProperty Name="SubDivisionName" ColumnName="SubDivisionName" />
+          <ScalarProperty Name="spousename" ColumnName="spousename" />
+          <ScalarProperty Name="spouse" ColumnName="spouse" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="member_get" FunctionName="ChodaeModel.Store.member_get3">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChodaeModel.member_get_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="en_first_name" ColumnName="en_first_name" />
+          <ScalarProperty Name="en_last_name" ColumnName="en_last_name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="cell" ColumnName="cell" />
+          <ScalarProperty Name="work_phone" ColumnName="work_phone" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="married" ColumnName="married" />
+          <ScalarProperty Name="family_code" ColumnName="family_code" />
+          <ScalarProperty Name="family_relationship" ColumnName="family_relationship" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="regdate" ColumnName="regdate" />
+          <ScalarProperty Name="address_id" ColumnName="address_id" />
+          <ScalarProperty Name="subdiv_id" ColumnName="subdiv_id" />
+          <ScalarProperty Name="baptism_id" ColumnName="baptism_id" />
+          <ScalarProperty Name="baptism_year" ColumnName="baptism_year" />
+          <ScalarProperty Name="job" ColumnName="job" />
+          <ScalarProperty Name="entrytype" ColumnName="entrytype" />
+          <ScalarProperty Name="jobtype" ColumnName="jobtype" />
+          <ScalarProperty Name="spouse" ColumnName="spouse" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="row_status" ColumnName="row_status" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="create_by" ColumnName="create_by" />
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="update_by" ColumnName="update_by" />
+          <ScalarProperty Name="lastchanged" ColumnName="lastchanged" />
+          <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+          <ScalarProperty Name="FellowshipCode" ColumnName="FellowshipCode" />
+          <ScalarProperty Name="CellCode" ColumnName="CellCode" />
+          <ScalarProperty Name="FamilyName" ColumnName="FamilyName" />
+          <ScalarProperty Name="FellowshipStartdate" ColumnName="FellowshipStartdate" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="StatusChanged" ColumnName="StatusChanged" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+          <ScalarProperty Name="CellName" ColumnName="CellName" />
+          <ScalarProperty Name="FellowshipName" ColumnName="FellowshipName" />
+          <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+          <ScalarProperty Name="CellRoleCode" ColumnName="CellRoleCode" />
+          <ScalarProperty Name="ministry" ColumnName="ministry" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="subdivision_list" FunctionName="ChodaeModel.Store.subdivision_list">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChodaeModel.subdivision_list_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="parentid" ColumnName="parentid" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="type_baptism_list" FunctionName="ChodaeModel.Store.type_baptism_list">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChodaeModel.type_baptism_list_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="type_job_list" FunctionName="ChodaeModel.Store.type_job_list">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChodaeModel.type_job_list_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="address_get" FunctionName="ChodaeModel.Store.address_get">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChodaeModel.address_get_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="statecode" ColumnName="statecode" />
+          <ScalarProperty Name="zipcode" ColumnName="zipcode" />
+          <ScalarProperty Name="home" ColumnName="home" />
+          <ScalarProperty Name="lastchanged" ColumnName="lastchanged" />
+          <ScalarProperty Name="update_by" ColumnName="update_by" />
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="type_status_get" FunctionName="ChodaeModel.Store.type_status_get">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChodaeModel.type_status_get_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="row_status" ColumnName="row_status" />
+          <ScalarProperty Name="update_by" ColumnName="update_by" />
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="lastchanged" ColumnName="lastchanged" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="type_entry_list" FunctionName="ChodaeModel.Store.type_entry_list">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChodaeModel.type_entry_list_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="member_get1" FunctionName="ChodaeModel.Store.member_get2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChodaeModel.member_get1_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fellowship" ColumnName="fellowship" />
+          <ScalarProperty Name="startdate" ColumnName="startdate" />
+          <ScalarProperty Name="enddate" ColumnName="enddate" />
+          <ScalarProperty Name="lastchanged" ColumnName="lastchanged" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="visit_list" FunctionName="ChodaeModel.Store.visit_list">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChodaeModel.visit_list_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="bible" ColumnName="bible" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+          <ScalarProperty Name="pastor" ColumnName="pastor" />
+          <ScalarProperty Name="memberid" ColumnName="memberid" />
+          <ScalarProperty Name="song" ColumnName="song" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="CellName" ColumnName="CellName" />
+          <ScalarProperty Name="visitdate" ColumnName="visitdate" />
+          <ScalarProperty Name="visittype" ColumnName="visittype" />
+          <ScalarProperty Name="attendent" ColumnName="attendent" />
+          <ScalarProperty Name="VisitTypeName" ColumnName="VisitTypeName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="visit_list_web" FunctionName="ChodaeModel.Store.visit_list_web">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChodaeModel.visit_list_web_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="bible" ColumnName="bible" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+          <ScalarProperty Name="pastor" ColumnName="pastor" />
+          <ScalarProperty Name="memberid" ColumnName="memberid" />
+          <ScalarProperty Name="song" ColumnName="song" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="CellName" ColumnName="CellName" />
+          <ScalarProperty Name="visitdate" ColumnName="visitdate" />
+          <ScalarProperty Name="visittype" ColumnName="visittype" />
+          <ScalarProperty Name="attendent" ColumnName="attendent" />
+          <ScalarProperty Name="VisitTypeName" ColumnName="VisitTypeName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="visits" FunctionName="ChodaeModel.Store.visits">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChodaeModel.visits_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="bible" ColumnName="bible" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+          <ScalarProperty Name="pastor" ColumnName="pastor" />
+          <ScalarProperty Name="memberid" ColumnName="memberid" />
+          <ScalarProperty Name="song" ColumnName="song" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="CellName" ColumnName="CellName" />
+          <ScalarProperty Name="visitdate" ColumnName="visitdate" />
+          <ScalarProperty Name="visittype" ColumnName="visittype" />
+          <ScalarProperty Name="attendent" ColumnName="attendent" />
+          <ScalarProperty Name="VisitTypeName" ColumnName="VisitTypeName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="member_get2" FunctionName="ChodaeModel.Store.member_get">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChodaeModel.member_get2_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cellname" ColumnName="cellname" />
+          <ScalarProperty Name="rolename" ColumnName="rolename" />
+          <ScalarProperty Name="startdate" ColumnName="startdate" />
+          <ScalarProperty Name="enddate" ColumnName="enddate" />
+          <ScalarProperty Name="role_code" ColumnName="role_code" />
+          <ScalarProperty Name="cell_code" ColumnName="cell_code" />
+          <ScalarProperty Name="lastchanged" ColumnName="lastchanged" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="member_get11" FunctionName="ChodaeModel.Store.member_get1">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChodaeModel.member_get11_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="memberid" ColumnName="memberid" />
+          <ScalarProperty Name="course_code" ColumnName="course_code" />
+          <ScalarProperty Name="graduated" ColumnName="graduated" />
+          <ScalarProperty Name="lastchanged" ColumnName="lastchanged" />
+          <ScalarProperty Name="row_status" ColumnName="row_status" />
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="update_by" ColumnName="update_by" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="comment_list" FunctionName="ChodaeModel.Store.comment_list">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChodaeModel.comment_list_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="regdate" ColumnName="regdate" />
+          <ScalarProperty Name="memberid" ColumnName="memberid" />
+          <ScalarProperty Name="create_by" ColumnName="create_by" />
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="lastchanged" ColumnName="lastchanged" />
+          <ScalarProperty Name="row_status" ColumnName="row_status" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="update_by" ColumnName="update_by" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="member_get4" FunctionName="ChodaeModel.Store.member_get4">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChodaeModel.member_get4_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ministry_code" ColumnName="ministry_code" />
+          <ScalarProperty Name="role_code" ColumnName="role_code" />
+          <ScalarProperty Name="memberid" ColumnName="memberid" />
+          <ScalarProperty Name="startdate" ColumnName="startdate" />
+          <ScalarProperty Name="enddate" ColumnName="enddate" />
+          <ScalarProperty Name="lastchanged" ColumnName="lastchanged" />
+          <ScalarProperty Name="row_status" ColumnName="row_status" />
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="update_by" ColumnName="update_by" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="course_list" FunctionName="ChodaeModel.Store.course_list">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChodaeModel.course_list_Result">
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="parentid" ColumnName="parentid" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="assigned" ColumnName="assigned" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ministry_get" FunctionName="ChodaeModel.Store.ministry_get">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChodaeModel.ministry_get_Result">
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="parent_code" ColumnName="parent_code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="update_by" ColumnName="update_by" />
+          <ScalarProperty Name="row_status" ColumnName="row_status" />
+          <ScalarProperty Name="lastchanged" ColumnName="lastchanged" />
+          <ScalarProperty Name="total_assign" ColumnName="total_assign" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ministry_role_get" FunctionName="ChodaeModel.Store.ministry_role_get">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChodaeModel.ministry_role_get_Result">
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="isdefault" ColumnName="isdefault" />
+          <ScalarProperty Name="create_by" ColumnName="create_by" />
+          <ScalarProperty Name="update_by" ColumnName="update_by" />
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="row_status" ColumnName="row_status" />
+          <ScalarProperty Name="lastchanged" ColumnName="lastchanged" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="cell_list" FunctionName="ChodaeModel.Store.cell_list">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChodaeModel.cell_list_Result">
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="report_list" FunctionName="ChodaeModel.Store.report_list">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChodaeModel.report_list_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="request" ColumnName="request" />
+          <ScalarProperty Name="leader" ColumnName="leader" />
+          <ScalarProperty Name="cell_date" ColumnName="cell_date" />
+          <ScalarProperty Name="cell_place" ColumnName="cell_place" />
+          <ScalarProperty Name="attendance" ColumnName="attendance" />
+          <ScalarProperty Name="new_member" ColumnName="new_member" />
+          <ScalarProperty Name="atten_family_count" ColumnName="atten_family_count" />
+          <ScalarProperty Name="memberno" ColumnName="memberno" />
+          <ScalarProperty Name="cell" ColumnName="cell" />
+          <ScalarProperty Name="memo" ColumnName="memo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="report_get" FunctionName="ChodaeModel.Store.report_get">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChodaeModel.report_get_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+          <ScalarProperty Name="cell_date" ColumnName="cell_date" />
+          <ScalarProperty Name="cell_place" ColumnName="cell_place" />
+          <ScalarProperty Name="new_member" ColumnName="new_member" />
+          <ScalarProperty Name="leader" ColumnName="leader" />
+          <ScalarProperty Name="prayer" ColumnName="prayer" />
+          <ScalarProperty Name="memo" ColumnName="memo" />
+          <ScalarProperty Name="lastchanged" ColumnName="lastchanged" />
+          <ScalarProperty Name="cell_code" ColumnName="cell_code" />
+          <ScalarProperty Name="request" ColumnName="request" />
+          <ScalarProperty Name="atten_family_count" ColumnName="atten_family_count" />
+          <ScalarProperty Name="recoder" ColumnName="recoder" />
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="update_by" ColumnName="update_by" />
+          <ScalarProperty Name="row_status" ColumnName="row_status" />
+          <ScalarProperty Name="total_family_count" ColumnName="total_family_count" />
+          <ScalarProperty Name="cell_leader" ColumnName="cell_leader" />
+          <ScalarProperty Name="cell_leader2" ColumnName="cell_leader2" />
+          <ScalarProperty Name="create_by" ColumnName="create_by" />
+          <ScalarProperty Name="CellName" ColumnName="CellName" />
+          <ScalarProperty Name="atten_count" ColumnName="atten_count" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="reportdetail_get" FunctionName="ChodaeModel.Store.reportdetail_get">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChodaeModel.reportdetail_get_Result">
+          <ScalarProperty Name="member_id" ColumnName="member_id" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="cell" ColumnName="cell" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="role_code" ColumnName="role_code" />
+          <ScalarProperty Name="role_level" ColumnName="role_level" />
+          <ScalarProperty Name="family_code" ColumnName="family_code" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="reportdetailweb_get" FunctionName="ChodaeModel.Store.reportdetailweb_get">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChodaeModel.reportdetailweb_get_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="member_id" ColumnName="member_id" />
+          <ScalarProperty Name="attendance" ColumnName="attendance" />
+          <ScalarProperty Name="reason" ColumnName="reason" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="memo" ColumnName="memo" />
+          <ScalarProperty Name="regdate" ColumnName="regdate" />
+          <ScalarProperty Name="lastchanged" ColumnName="lastchanged" />
+          <ScalarProperty Name="role_level" ColumnName="role_level" />
+          <ScalarProperty Name="role_code" ColumnName="role_code" />
+          <ScalarProperty Name="row_status" ColumnName="row_status" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="cell" ColumnName="cell" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="family_code" ColumnName="family_code" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="users_master">
+      <EntityTypeMapping TypeName="ChodaeModel.users_master">
+        <MappingFragment StoreEntitySet="users_master">
+          <ScalarProperty Name="update_by" ColumnName="update_by" />
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="lastchanged" ColumnName="lastchanged" />
+          <ScalarProperty Name="roles" ColumnName="roles" />
+          <ScalarProperty Name="divs" ColumnName="divs" />
+          <ScalarProperty Name="lastlogin" ColumnName="lastlogin" />
+          <ScalarProperty Name="regdate" ColumnName="regdate" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,76 @@
+﻿@using LandWeb.Models;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Back = false;
+}
+<style type="text/css">
+    input[type="text"]{width:100px}
+    .clickable-row{cursor:pointer}
+</style>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $(".clickable-row").click(function () {
+            window.document.location = $(this).data("href");
+        });
+    });
+</script>
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-sm-4 top-field">교인번호 @Html.TextBox("ID")</div>
+        <div class="col-sm-4 top-field">교인이름 @Html.TextBox("Name")</div>
+        <div class="col-sm-4 top-field" ><input id="submitButton" type="submit" value="Search" style="margin-left:22px" /></div>
+    </div>
+}
+
+<div style="clear:both; margin-top:20px; height:100%">
+    @if(Model.Members != null)
+    {
+        <div class="CSSTableGenerator" style="clear:both">
+            <table>
+                <tr>
+                    <td>
+                        교인번호
+                    </td>
+                    <td>
+                        이름
+                    </td>
+                    <td>
+                        영문이름
+                    </td>
+                    <td>
+                        휴대폰
+                    </td>
+                    @*<td>
+                        이메일
+                    </td>*@
+                </tr>
+
+                @foreach (var member in Model.Members)
+                {
+
+                    <tr class="clickable-row" data-href='@Url.Action("Detail", "Member", new { ID = member.id })'>
+                        <td>
+                            @member.id
+                        </td>
+                        <td>
+                            @member.last_name@member.first_name
+
+                        </td>
+                        <td>
+                            @member.en_first_name @member.en_last_name
+                        </td>
+                        <td>
+                            @member.cell
+                        </td>
+                        @*<td>
+                                @member.email
+                            </td>*@
+                    </tr>
+
+                }
+            </table>
+        </div>
+    }
+</div>
