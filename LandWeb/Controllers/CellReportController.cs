@@ -15,7 +15,7 @@ namespace LandWeb.Controllers
         {
             CellReportViewModel model = new CellReportViewModel();
             model.CellList = DropDownHelper.GetCellList();
-            TempData["CellList"] = model.CellList;
+            //TempData["CellList"] = model.CellList;
             ViewBag.Back = false;
             return View(model);
         }

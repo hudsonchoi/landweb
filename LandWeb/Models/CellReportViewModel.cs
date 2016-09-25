@@ -10,6 +10,11 @@ namespace LandWeb.Models
 {
     public class CellReportViewModel
     {
+        public CellReportViewModel()
+        {
+            From = DateTime.Now.AddMonths(-3).Date;
+            To = DateTime.Now.Date;
+        }
         public string CellCode { get; set; }
         public SelectList CellList { get; set; }
         public IEnumerable<report_list_Result> Reports { get; set; }
