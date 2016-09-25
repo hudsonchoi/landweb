@@ -3,6 +3,9 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <style type="text/css">
     .CSSTableGenerator tr:first-child td {
         font-size: 12px !important;
@@ -16,17 +19,31 @@
 </style>
 <script>
     $(function () {
+
         $("#CellCode option:first").prop("disabled", true);
         $(".clickable-row").click(function () {
             window.document.location = $(this).data("href");
+        });
+
+
+        $("#fromDate").datepicker({
+            constrainInput: false,
+            changeMonth: true,
+            changeYear: true
+        });
+
+        $("#toDate").datepicker({
+            constrainInput: false,
+            changeMonth: true,
+            changeYear: true
         });
      });
 </script>
 @using (Html.BeginForm())
 {
     <div class="row">
-        <div class="col-sm-4 top-field">From @Html.TextBoxFor(m => m.From)</div>
-        <div class="col-sm-4 top-field">To @Html.TextBoxFor(m => m.To)</div>
+        <div class="col-sm-4 top-field">From: @Html.TextBoxFor(m => m.From, "{0:MM/dd/yyy}", new { @id = "fromDate", @style="width:80px" })</div>
+        <div class="col-sm-4 top-field">To: @Html.TextBoxFor(m => m.To, "{0:MM/dd/yyy}", new { @id = "toDate", @style = "width:80px" })</div>
         <div class="col-sm-4 top-field">순: @Html.DropDownListFor(m => m.CellCode, new SelectList(Model.CellList.Items, "Value", "Text"), new { onchange = "this.form.submit();" })</div>
     </div>
 }

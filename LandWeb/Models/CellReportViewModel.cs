@@ -12,8 +12,8 @@ namespace LandWeb.Models
     {
         public CellReportViewModel()
         {
-            From = DateTime.Now.AddMonths(-3).Date;
-            To = DateTime.Now.Date;
+            From = DateTime.Now.AddMonths(-3);
+            To = DateTime.Now;
         }
         public string CellCode { get; set; }
         public SelectList CellList { get; set; }

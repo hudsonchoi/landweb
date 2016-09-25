@@ -56,5 +56,23 @@ namespace LandWeb.Controllers
             model.Members = dal.GetReportDetailMembers((int)cellCode);
             return View(model);
         }
+
+        public ActionResult Dev()
+        {
+            CellReportViewModel model = new CellReportViewModel();
+            model.CellList = DropDownHelper.GetCellList();
+            //TempData["CellList"] = model.CellList;
+            ViewBag.Back = false;
+            return View();
+        }
+
+        public ActionResult Dev2()
+        {
+            CellReportViewModel model = new CellReportViewModel();
+            model.CellList = DropDownHelper.GetCellList();
+            //TempData["CellList"] = model.CellList;
+            ViewBag.Back = false;
+            return View();
+        }
     }
 }
