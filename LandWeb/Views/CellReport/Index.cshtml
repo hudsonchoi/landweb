@@ -44,7 +44,7 @@
     <div class="row">
         <div class="col-sm-4 top-field">From: @Html.TextBoxFor(m => m.From, "{0:MM/dd/yyy}", new { @id = "fromDate", @style="width:80px" })</div>
         <div class="col-sm-4 top-field">To: @Html.TextBoxFor(m => m.To, "{0:MM/dd/yyy}", new { @id = "toDate", @style = "width:80px" })</div>
-        <div class="col-sm-4 top-field">순: @Html.DropDownListFor(m => m.CellCode, new SelectList(Model.CellList.Items, "Value", "Text"), new { onchange = "this.form.submit();" })</div>
+        <div class="col-sm-4 top-field">순: @Html.DropDownListFor(m => m.CellCode, new SelectList(Model.CellList.Items, "Value", "Text"), new { @id = "toDate", @style = "width:110px" }) <input type="submit" value="search"/></div>
     </div>
 }
 

@@ -153,9 +153,9 @@ namespace LandWeb.Model
             return context.cell_list(frk_n4ErrorCode, frk_strErrorText, null);
         }
 
-        public IEnumerable<report_list_Result> GetReportList(int code)
+        public IEnumerable<report_list_Result> GetReportList(int code, DateTime from, DateTime to)
         {
-            return context.report_list(frk_n4ErrorCode, frk_strErrorText, null, code, null, null, null);
+            return context.report_list(frk_n4ErrorCode, frk_strErrorText, null, code, from, to, null);
         }
 
         public report_get_Result GetReportDetail(int ID)

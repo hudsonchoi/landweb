@@ -21,30 +21,31 @@ namespace LandWeb.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(int? cellCode)
+        public ActionResult Index(CellReportViewModel model)
         {
             ViewBag.Back = true;
-            return View(GetReportViewModel((int)cellCode));
+            return View(GetReportViewModel(model));
         }
 
         public ActionResult Get(int? cellCode)
         {
             ViewBag.Back = true;
-            return View("Index", GetReportViewModel((int)cellCode));
+            CellReportViewModel model = new CellReportViewModel();
+            model.CellCode = cellCode.ToString();
+            return View("Index", GetReportViewModel(model));
         }
 
-        private CellReportViewModel GetReportViewModel(int cellCode)
+        private CellReportViewModel GetReportViewModel(CellReportViewModel model)
         {
-            CellReportViewModel model = new CellReportViewModel();
             SelectList cellList = DropDownHelper.GetCellList();
             foreach (var c in cellList)
             {
-                if (c.Value == cellCode.ToString())
+                if (c.Value == model.CellCode)
                     c.Selected = true;
             }
             model.CellList = cellList;
             DAL dal = new DAL();
-            model.Reports = dal.GetReportList((int)cellCode).ToList();
+            model.Reports = dal.GetReportList(Convert.ToInt32(model.CellCode), model.From, model.To).ToList();
             return model;
         }
 
