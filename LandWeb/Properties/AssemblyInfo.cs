@@ -32,9 +32,17 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Revision and Build Numbers
 // by using the '*' as shown below:
 
-[assembly: AssemblyVersion("1.0.2")]
-// Add the from and to dates to the cell report manager
-[assembly: AssemblyFileVersion("1.0.2")]
+[assembly: AssemblyVersion("1.0.4")]
+// Enable global exception handling
+[assembly: AssemblyFileVersion("1.0.4")]
+
+//[assembly: AssemblyVersion("1.0.3")]
+// Enforce Visits business logic
+//[assembly: AssemblyFileVersion("1.0.3")]
+
+//[assembly: AssemblyVersion("1.0.2")]
+//// Add the from and to dates to the cell report manager
+//[assembly: AssemblyFileVersion("1.0.2")]
 
 //[assembly: AssemblyVersion("1.0.1")]
 // Add the version number; Debug null error for some member

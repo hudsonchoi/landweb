@@ -23,11 +23,11 @@ namespace LandWeb.Model
             frk_strErrorText = new ObjectParameter("frk_strErrorText", typeof(String));
         }
 
-        public bool Login(string username, string password)
+        public users_master Login(string username, string password)
         {
             unitOfWork = new UnitOfWork();
             var results = unitOfWork.UserRepository.Get();
-            return (results.Where(a => a.username == username && a.password == password).Count() > 0);
+            return (results.Where(a => a.username == username && a.password == password).First());
 
         }
         public IEnumerable<member_list_Result> GetMembers(DateTime? start = null, DateTime? end = null, int id = 0, string name = null)

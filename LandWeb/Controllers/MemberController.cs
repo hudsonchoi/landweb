@@ -59,6 +59,7 @@ namespace LandWeb.Controllers
             model.Comments = dal.GetComments((int)ID).ToList();
             model.Courses = dal.GetCourses((int)ID).ToList();
             model.Ministries = dal.GetMinistries((int)ID).ToList();
+            model.ShowVisits = (Session["ShowVisits"] != null);
             return View(model);
 
         }

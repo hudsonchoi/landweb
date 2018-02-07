@@ -77,8 +77,17 @@ namespace LandWeb.Controllers
 
             DAL dal = new DAL();
 
-            if (dal.Login(model.UserName, model.Password))
+            users_master um = dal.Login(model.UserName, model.Password);
+            if (um!=null)
             {
+                if (um.roles.Contains("16") || um.roles.Contains("13"))//Visit_CanGetAll or Visit_CanGet
+                {
+                    Session["ShowVisits"] = true;
+                }
+                else
+                {
+                    Session["ShowVisits"] = null;
+                }
                 FormsAuthentication.SetAuthCookie(model.UserName, false);
                 return RedirectToLocal(returnUrl);
             }
@@ -418,6 +427,16 @@ namespace LandWeb.Controllers
             return View();
         }
 
+
+        [AllowAnonymous]
+        public ActionResult TestError()
+        {
+            int i = 0;
+            var result = 2 / i;
+            //Exception ex = new Exception("Test error handling");
+            //throw ex;
+            return View();
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

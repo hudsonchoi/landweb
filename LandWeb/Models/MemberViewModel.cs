@@ -30,6 +30,8 @@ namespace LandWeb.Models
 
         public string Fellowship { get; set;}
 
+        public bool ShowVisits { get; set; }
+
         public IEnumerable<visits_Result> Visits { get; set; }
 
         public IEnumerable<member_get1_Result> Fellowships { get; set; }
