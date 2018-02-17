@@ -35,7 +35,7 @@
       background-color: #ccc;
     }
 </style>
-<table class="labelTable">
+<table class="labelTable" border="1">
     <tr>
         <td class="chodaeLabel">ID</td>
         <td>@Model.Report.Id</td>
@@ -58,29 +58,29 @@
     </tr>
 </table>
 <br />
-<table class="labelTable">
+<table class="labelTable" border="1">
     <tr>
         <td class="chodaeLabel" style="width:100px">모임장소</td>
-        <td style="width:300px">@Model.Report.cell_place</td>
+        <td colspan="3" style="width:300px">@Model.Report.cell_place</td>
         <td class="chodaeLabel" style="width:100px">새교인</td>
-        <td style="width:300px">@Model.Report.new_member</td>
+        <td colspan="3" style="width:300px">@Model.Report.new_member</td>
     </tr>
 </table>
 <br />
-<table class="labelTable">
+<table class="labelTable" border="1">
     <tr>
         <td class="chodaeLabel" style="width:100px">Memo</td>
-        <td style="width:700px">@Model.Report.memo</td>
+        <td colspan="7" style="width:700px">@Model.Report.memo</td>
 </tr>
     <tr>
         <td class="chodaeLabel" style="width:100px">요청사항</td>
-        <td style="width:700px">@Model.Report.request</td>
+        <td colspan="7" style="width:700px">@Model.Report.request</td>
     </tr>
 </table>
 <br />
             @if (Model.Members != null)
             {
-                    <table class="dataTable">
+                    <table class="dataTable" border="1">
                         <tr>
                             <th>
                                 교인명
@@ -91,10 +91,10 @@
                             <th>
                                 참석여부
                             </th>
-                            <th>
+                            <th colspan="2">
                                 불참사유
                             </th>
-                            <th>
+                            <th colspan="2">
                                 메모
                             </th>
                             <th>
@@ -116,10 +116,10 @@
                                 <td>
                                     @(m.attendance ? "O" : "X")
                                 </td>
-                                <td>
+                                <td colspan="2">
                                     @m.reason
                                 </td>
-                                <td>
+                                <td colspan="2">
                                     @m.memo
                                 </td>
                                 <td>

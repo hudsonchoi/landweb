@@ -200,6 +200,7 @@
     <Content Include="Content\images\logo.gif" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\noimage.jpg" />
+    <Content Include="Content\images\pdf.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -275,7 +276,7 @@
     <Content Include="Views\CellReport\Dev2.cshtml" />
     <Content Include="Views\Account\TestError.cshtml" />
     <Content Include="Views\Home\Error.cshtml" />
-    <Content Include="Views\CellReport\ExportToPDF.cshtml" />
+    <Content Include="Views\CellReport\ExportToFile.cshtml" />
     <Content Include="Views\Shared\_LayoutExport.cshtml" />
   </ItemGroup>
   <ItemGroup>

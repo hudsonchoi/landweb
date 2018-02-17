@@ -58,19 +58,31 @@ namespace LandWeb.Controllers
 
         public ActionResult ExportToPDF(int? cellCode)
         {
+            CellReportDetailViewModel model = GetReport(cellCode);
 
-            string htmlToConvert = RenderViewAsString("ExportTOPDF", GetReport(cellCode));
+            string htmlToConvert = RenderViewAsString("ExportTOFile", model);
 
             HtmlToPdf htmlToPdfConverter = new HtmlToPdf();
 
             byte[] pdfBuffer = htmlToPdfConverter.ConvertHtmlToMemory(htmlToConvert, null);
 
             FileResult fileResult = new FileContentResult(pdfBuffer, "application/pdf");
-            fileResult.FileDownloadName = "AboutMvcViewToPdf.pdf";
+            fileResult.FileDownloadName = "CellReport" + model.Report.CellName + ".pdf";
 
             return fileResult;
 
             //return View(GetReport(cellCode));
+        }
+
+        public ActionResult ExportToXLS(int? cellCode)
+        {
+            CellReportDetailViewModel model = GetReport(cellCode);
+            Response.ClearContent();
+            Response.Buffer = true;
+            Response.AddHeader("content-disposition", "attachment; filename=CellReport" + model.Report.CellName + ".xls");
+            Response.ContentType = "application/ms-excel";
+            Response.Charset = "";
+            return View("ExportToFile",model);
         }
 
         public string RenderViewAsString(string viewName, object model)

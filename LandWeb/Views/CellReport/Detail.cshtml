@@ -127,8 +127,15 @@
         }
     </div>
 <div style="margin-top:20px; width:100%; text-align:right">
-    <a href="@Url.Action("ExportToPDF", "CellReport", new {cellCode=Request.QueryString["cellCode"]})">
-        <img src="@Url.Content("~/Content/images/excel.png")" />
-    </a>
+    <div style="float:right">
+        <a href="@Url.Action("ExportToXLS", "CellReport", new {cellCode=Request.QueryString["cellCode"]})">
+            <img src="@Url.Content("~/Content/images/excel.png")" title="Export to XLS" />
+        </a>
+    </div>
+    <div style="float:right; margin-right:10px">
+        <a href="@Url.Action("ExportToPDF", "CellReport", new {cellCode=Request.QueryString["cellCode"]})">
+            <img src="@Url.Content("~/Content/images/pdf.png")" title="Export to PDF" />
+        </a>
+    </div>
     @*@Html.ActionLink("Excel", "ExportToExcel", new {page=Request.QueryString["page"]})*@
 </div>
