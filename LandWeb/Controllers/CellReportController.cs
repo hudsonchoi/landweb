@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using HiQPdf;
+using System.IO;
 
 namespace LandWeb.Controllers
 {
@@ -51,11 +53,56 @@ namespace LandWeb.Controllers
 
         public ActionResult Detail(int? cellCode)
         {
+            return View(GetReport(cellCode));
+        }
+
+        public ActionResult ExportToPDF(int? cellCode)
+        {
+
+            string htmlToConvert = RenderViewAsString("ExportTOPDF", GetReport(cellCode));
+
+            HtmlToPdf htmlToPdfConverter = new HtmlToPdf();
+
+            byte[] pdfBuffer = htmlToPdfConverter.ConvertHtmlToMemory(htmlToConvert, null);
+
+            FileResult fileResult = new FileContentResult(pdfBuffer, "application/pdf");
+            fileResult.FileDownloadName = "AboutMvcViewToPdf.pdf";
+
+            return fileResult;
+
+            //return View(GetReport(cellCode));
+        }
+
+        public string RenderViewAsString(string viewName, object model)
+        {
+            // create a string writer to receive the HTML code
+            StringWriter stringWriter = new StringWriter();
+
+            // get the view to render
+            ViewEngineResult viewResult = ViewEngines.Engines.FindView(ControllerContext, viewName, null);
+            // create a context to render a view based on a model
+            ViewContext viewContext = new ViewContext(
+                    ControllerContext,
+                    viewResult.View,
+                    new ViewDataDictionary(model),
+                    new TempDataDictionary(),
+                    stringWriter
+                    );
+
+            // render the view to a HTML code
+            viewResult.View.Render(viewContext, stringWriter);
+
+            // return the HTML code
+            return stringWriter.ToString();
+        }
+
+        public CellReportDetailViewModel GetReport (int? cellCode = null)
+        {
             DAL dal = new DAL();
             CellReportDetailViewModel model = new CellReportDetailViewModel();
             model.Report = dal.GetReportDetail((int)cellCode);
             model.Members = dal.GetReportDetailMembers((int)cellCode);
-            return View(model);
+            return model;
         }
 
         public ActionResult Dev()

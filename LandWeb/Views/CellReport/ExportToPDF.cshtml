@@ -1,0 +1,133 @@
+﻿@model LandWeb.Models.CellReportDetailViewModel
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_LayoutExport.cshtml";
+    ViewBag.Back = true;
+}
+<style type="text/css">
+    .chodaeLabel {
+        color: #41791e;
+        font-weight: bold;
+    }
+    .labelTable {
+        width: 800px;
+    }
+    .labelTable tr td {
+        border: 1px solid #ccc;
+    }
+
+    .dataTable {
+        width: 800px;
+        border: 1px solid #ccc;
+    }
+    .dataTable th {
+        background: #41791e;
+        font-weight: bold;
+        color: white;
+        padding: 3px;
+    }
+    .dataTable tr td {
+        border: 1px solid #ccc;
+        padding: 4px;
+    }
+
+    .dataTable tr:nth-child(odd){
+      background-color: #ccc;
+    }
+</style>
+<table class="labelTable">
+    <tr>
+        <td class="chodaeLabel">ID</td>
+        <td>@Model.Report.Id</td>
+        <td class="chodaeLabel">순명</tdclass="chodaeLabel">
+        <td>@Model.Report.CellName</td>
+        <td class="chodaeLabel">인도자</td>
+        <td>@Model.Report.leader</td>
+        <td class="chodaeLabel">작성일</td>
+        <td>@Model.Report.reg_date.ToShortDateString()</td>
+    </tr>
+    <tr>
+        <td class="chodaeLabel">모임일</td>
+        <td>@Model.Report.cell_date.ToShortDateString()</td>
+        <td class="chodaeLabel">Prayer</td>
+        <td>@Model.Report.prayer</td>
+        <td class="chodaeLabel">참석수</td>
+        <td>@Model.Report.atten_count</td>
+        <td class="chodaeLabel">참석가정수</td>
+        <td>@Model.Report.atten_family_count</td>
+    </tr>
+</table>
+<br />
+<table class="labelTable">
+    <tr>
+        <td class="chodaeLabel" style="width:100px">모임장소</td>
+        <td style="width:300px">@Model.Report.cell_place</td>
+        <td class="chodaeLabel" style="width:100px">새교인</td>
+        <td style="width:300px">@Model.Report.new_member</td>
+    </tr>
+</table>
+<br />
+<table class="labelTable">
+    <tr>
+        <td class="chodaeLabel" style="width:100px">Memo</td>
+        <td style="width:700px">@Model.Report.memo</td>
+</tr>
+    <tr>
+        <td class="chodaeLabel" style="width:100px">요청사항</td>
+        <td style="width:700px">@Model.Report.request</td>
+    </tr>
+</table>
+<br />
+            @if (Model.Members != null)
+            {
+                    <table class="dataTable">
+                        <tr>
+                            <th>
+                                교인명
+                            </th>
+                            <th>
+                                성별
+                            </th>
+                            <th>
+                                참석여부
+                            </th>
+                            <th>
+                                불참사유
+                            </th>
+                            <th>
+                                메모
+                            </th>
+                            <th>
+                                Cell
+                            </th>
+                        </tr>
+
+                        @foreach (var m in Model.Members)
+                {
+
+                            <tr>
+                                <td>
+                                    @m.last_name@m.first_name
+                                </td>
+                                <td>
+                                    @(m.sex ? "남" : "여")
+
+                                </td>
+                                <td>
+                                    @(m.attendance ? "O" : "X")
+                                </td>
+                                <td>
+                                    @m.reason
+                                </td>
+                                <td>
+                                    @m.memo
+                                </td>
+                                <td>
+                                    @m.cell
+                                </td>
+                            </tr>
+
+                        }
+                    </table>
+
+            }

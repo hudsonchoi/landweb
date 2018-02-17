@@ -126,3 +126,9 @@
             </div>
         }
     </div>
+<div style="margin-top:20px; width:100%; text-align:right">
+    <a href="@Url.Action("ExportToPDF", "CellReport", new {cellCode=Request.QueryString["cellCode"]})">
+        <img src="@Url.Content("~/Content/images/excel.png")" />
+    </a>
+    @*@Html.ActionLink("Excel", "ExportToExcel", new {page=Request.QueryString["page"]})*@
+</div>
