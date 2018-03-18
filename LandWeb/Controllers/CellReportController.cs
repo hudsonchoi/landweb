@@ -80,7 +80,7 @@ namespace LandWeb.Controllers
             CellReportDetailViewModel model = GetReport(cellCode);
             Response.ClearContent();
             Response.Buffer = true;
-            Response.AddHeader("content-disposition", "attachment; filename=CellReport" + model.Report.CellName + ".xls");
+            Response.AddHeader("content-disposition", string.Format("attachment;filename={0}.xls", HttpUtility.UrlEncode(model.Report.CellName + "cell_" + string.Format("{0:yyyy-MM-dd}", model.Report.cell_date).Replace("-", ""))));           
             Response.ContentType = "application/ms-excel";
             Response.Charset = "";
             return View("ExportToFile",model);
