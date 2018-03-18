@@ -67,7 +67,8 @@ namespace LandWeb.Controllers
             byte[] pdfBuffer = htmlToPdfConverter.ConvertHtmlToMemory(htmlToConvert, null);
 
             FileResult fileResult = new FileContentResult(pdfBuffer, "application/pdf");
-            fileResult.FileDownloadName = "CellReport" + model.Report.CellName + ".pdf";
+            fileResult.FileDownloadName = model.Report.CellName + "cell_" +
+                string.Format("{0:yyyy-MM-dd}", model.Report.cell_date).Replace("-","") + ".pdf";
 
             return fileResult;
 

@@ -32,9 +32,13 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Revision and Build Numbers
 // by using the '*' as shown below:
 
-[assembly: AssemblyVersion("1.1.0")]
+[assembly: AssemblyVersion("1.1.1")]
+// 3/17/2018 Change the PDF filename to '옥합1cell_20180121' format
+[assembly: AssemblyFileVersion("1.1.1")]
+
+//[assembly: AssemblyVersion("1.1.0")]
 // 2/17/2018 Add export to PDF and XLS cell report
-[assembly: AssemblyFileVersion("1.1.0")]
+//[assembly: AssemblyFileVersion("1.1.0")]
 
 //[assembly: AssemblyVersion("1.0.4")]
 // Enable global exception handling
