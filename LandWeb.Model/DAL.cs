@@ -27,7 +27,7 @@ namespace LandWeb.Model
         {
             unitOfWork = new UnitOfWork();
             var results = unitOfWork.UserRepository.Get();
-            return (results.Where(a => a.username == username && a.password == password).First());
+            return (results.Where(a => a.username == username && a.password == password).FirstOrDefault());
 
         }
         public IEnumerable<member_list_Result> GetMembers(DateTime? start = null, DateTime? end = null, int id = 0, string name = null)
