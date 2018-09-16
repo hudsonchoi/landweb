@@ -32,9 +32,14 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Revision and Build Numbers
 // by using the '*' as shown below:
 
-[assembly: AssemblyVersion("1.1.2")]
+[assembly: AssemblyVersion("1.1.3")]
+// 9/16/2018 Bugfix - Once reached to cell report via red cell link from the member detail page, date range doesn't work;
+//                    Change the exception email password
+[assembly: AssemblyFileVersion("1.1.3")]
+
+//[assembly: AssemblyVersion("1.1.2")]
 // 8/25/2018 Bugfix - invalid login error
-[assembly: AssemblyFileVersion("1.1.2")]
+//[assembly: AssemblyFileVersion("1.1.2")]
 
 //[assembly: AssemblyVersion("1.1.1")]
 // 3/17/2018 Change the PDF filename to '옥합1cell_20180121' format

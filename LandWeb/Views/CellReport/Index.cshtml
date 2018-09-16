@@ -39,7 +39,7 @@
         });
      });
 </script>
-@using (Html.BeginForm())
+@using (Html.BeginForm("Index", "CellReport", FormMethod.Post))
 {
     <div class="row">
         <div class="col-sm-4 top-field">From: @Html.TextBoxFor(m => m.From, "{0:MM/dd/yyy}", new { @id = "fromDate", @style="width:80px" })</div>

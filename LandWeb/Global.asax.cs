@@ -59,7 +59,7 @@ namespace LandWeb
                 mail.Body = sHTML;
                 mail.IsBodyHtml = true;
                 SmtpServer.Port = 587;
-                SmtpServer.Credentials = new System.Net.NetworkCredential("hudsonchoi@njchodae.org", "haT2eyed!");
+                SmtpServer.Credentials = new System.Net.NetworkCredential("hudsonchoi@njchodae.org", "airFaylo12");
                 SmtpServer.EnableSsl = true;
                 SmtpServer.Send(mail);
             }
