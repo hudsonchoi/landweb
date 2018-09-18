@@ -52,15 +52,14 @@ namespace LandWeb
                 "</body></html>";
             using (MailMessage mail = new MailMessage())
             {
-                SmtpClient SmtpServer = new SmtpClient("outlook.office365.com");
+                SmtpClient SmtpServer = new SmtpClient();
+                SmtpServer.Host = "192.168.9.3";
                 mail.From = new MailAddress("hudsonchoi@njchodae.org");
                 mail.To.Add("hudsonchoi@gmail.com");
                 mail.Subject = sSubject;
                 mail.Body = sHTML;
                 mail.IsBodyHtml = true;
-                SmtpServer.Port = 587;
-                SmtpServer.Credentials = new System.Net.NetworkCredential("hudsonchoi@njchodae.org", "airFaylo12");
-                SmtpServer.EnableSsl = true;
+                SmtpServer.UseDefaultCredentials = true;
                 SmtpServer.Send(mail);
             }
             Response.Redirect("/Home/Error");

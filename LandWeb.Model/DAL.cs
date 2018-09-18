@@ -143,7 +143,10 @@ namespace LandWeb.Model
             foreach (var m in ministries)
             {
                 m.MinistryName = ministryList.Where(a => a.code == m.ministry_code).FirstOrDefault().name;
-                m.MinistryRole = roleList.Where(a => a.code == m.role_code).FirstOrDefault().name;
+                if (m.role_code != null)
+                { 
+                    m.MinistryRole = roleList.Where(a => a.code == m.role_code).FirstOrDefault().name;
+                }
             }
             return ministries;
         }
