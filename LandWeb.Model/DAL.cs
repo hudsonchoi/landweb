@@ -127,7 +127,10 @@ namespace LandWeb.Model
 
             foreach (var c in courses)
             {
-                c.CourseName = courseList.Where(a => a.code == c.course_code).FirstOrDefault().name;
+                if (c.course_code > 0)
+                {
+                    c.CourseName = courseList.Where(a => a.code == c.course_code).FirstOrDefault().name;
+                }
             }
 
             return courses;
@@ -142,10 +145,13 @@ namespace LandWeb.Model
 
             foreach (var m in ministries)
             {
-                m.MinistryName = ministryList.Where(a => a.code == m.ministry_code).FirstOrDefault().name;
-                if (m.role_code != null)
+                if (m.ministry_code > 0)
                 { 
-                    m.MinistryRole = roleList.Where(a => a.code == m.role_code).FirstOrDefault().name;
+                    m.MinistryName = ministryList.Where(a => a.code == m.ministry_code).FirstOrDefault().name;
+                    if (m.role_code != null)
+                    { 
+                        m.MinistryRole = roleList.Where(a => a.code == m.role_code).FirstOrDefault().name;
+                    }
                 }
             }
             return ministries;

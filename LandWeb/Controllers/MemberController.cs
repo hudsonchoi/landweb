@@ -38,7 +38,10 @@ namespace LandWeb.Controllers
             model.Member = dal.GetMember((int)ID).ToList().FirstOrDefault();
             model.SubDivision = dal.GetSubDivisions().ToList().Where(a => a.id == model.Member.subdiv_id).FirstOrDefault().name;
             model.RegDate = (DateTime)model.Member.regdate;
-            model.Birthday = (DateTime)model.Member.birthday;
+            if (model.Member.birthday != null)
+            {
+                model.Birthday = (DateTime)model.Member.birthday;
+            }       
             model.Sex = model.Member.sex ? "남자" : "여자";
             model.Married = (bool)model.Member.married ? "기혼" : "미혼";
             if (model.Member.baptism_id != null && model.Member.baptism_id > 0)

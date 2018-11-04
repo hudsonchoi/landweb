@@ -32,11 +32,15 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Revision and Build Numbers
 // by using the '*' as shown below:
 
-[assembly: AssemblyVersion("1.1.3")]
+[assembly: AssemblyVersion("1.1.4")]
+// 11/4/2018 Bugfix - filtered null/invalid data; ministry code = 0, cours code = 0 and birthday is null; 
+[assembly: AssemblyFileVersion("1.1.4")]
+
+//[assembly: AssemblyVersion("1.1.3")]
 // 9/16/2018 Bugfix - Once reached to cell report via red cell link from the member detail page, date range doesn't work;
 //                    Change the exception email password
 // 9/18/2018 Use localhost as SMTP; Add favicon.ico; Bugfix ministry.role_code null breaking 이희주 집사님
-[assembly: AssemblyFileVersion("1.1.3")]
+//[assembly: AssemblyFileVersion("1.1.3")]
 
 //[assembly: AssemblyVersion("1.1.2")]
 // 8/25/2018 Bugfix - invalid login error
