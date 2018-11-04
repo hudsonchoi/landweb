@@ -37,19 +37,43 @@ namespace LandWeb
 
         protected void Application_Error()
         {
-            var exception = Server.GetLastError();
-
             var sSubject = "LandWeb Error";
-            string sHTML = "" +
-                "<html><head><style>body, td {font-size:10pt;font-family: \"Open Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;}</style></head>" +
-                "<body><h3>" + sSubject + "</h3><p>" + DateTime.Now.ToLongTimeString() + "</p>";
-            if (exception.InnerException != null)
-                sHTML += "<p><b>" + exception.InnerException.Source + "</b></p>" +
-                    "<p>" + exception.InnerException.Message + "</p>"; 
-            sHTML +=
-                "<p>" + exception.Message + "</p>" +
-                "<p>" + exception.StackTrace + "</p>" +
-                "</body></html>";
+            string strHandledMessage = String.Empty;
+            HttpBrowserCapabilities br = Request.Browser;
+
+            if (Server.GetLastError().InnerException != null)
+                strHandledMessage =
+                "GetLastError.InnerException.Message: " + Server.GetLastError().InnerException.Message.ToString() +
+                Environment.NewLine + Environment.NewLine +
+                "GetLastError.InnerException.StackTrace: " + Server.GetLastError().InnerException.StackTrace.ToString() +
+                Environment.NewLine + Environment.NewLine;
+            strHandledMessage +=
+                "The client ip: " + Request.ServerVariables["REMOTE_ADDR"] +
+                Environment.NewLine + Environment.NewLine +
+                "GetLastError.Message: " + Server.GetLastError().Message.ToString() +
+                Environment.NewLine + Environment.NewLine +
+                "Page: " + Request.ServerVariables["SCRIPT_NAME"] +
+                Environment.NewLine + Environment.NewLine +
+                "Server: " + Request.ServerVariables["SERVER_NAME"] +
+                Environment.NewLine + Environment.NewLine +
+                "Local Address: " + Request.ServerVariables["LOCAL_ADDR"] +
+                 Environment.NewLine + Environment.NewLine +
+                "Browser: " + br.Browser.ToString() + " : " + br.Version.ToString();
+
+            if (Request.UrlReferrer != null)
+            {
+                strHandledMessage += Environment.NewLine + Environment.NewLine +
+               "Referrer: " + Request.UrlReferrer.ToString();
+            }
+
+            if (Request.QueryString != null)
+            {
+                strHandledMessage += Environment.NewLine + Environment.NewLine +
+               "Query String: " + Request.QueryString.ToString();
+            }
+
+            strHandledMessage += Environment.NewLine + Environment.NewLine;
+
             using (MailMessage mail = new MailMessage())
             {
                 SmtpClient SmtpServer = new SmtpClient();
@@ -57,20 +81,12 @@ namespace LandWeb
                 mail.From = new MailAddress("hudsonchoi@njchodae.org");
                 mail.To.Add("hudsonchoi@gmail.com");
                 mail.Subject = sSubject;
-                mail.Body = sHTML;
-                mail.IsBodyHtml = true;
+                mail.Body = strHandledMessage;
+                //mail.IsBodyHtml = true;
                 SmtpServer.UseDefaultCredentials = true;
                 SmtpServer.Send(mail);
             }
             Response.Redirect("/Home/Error");
-            //EMailBuilder message1 = new EMailBuilder(sSubject, sHTML);
-            //message1.Recipients.AddTo("Hudson Choi", "hchoi@blueskymls.com");
-            //message1.Recipients.AddTo("Hudson Choi", "hudsonchoi@gmail.com");
-            //message1.Send();
-
-            //File.AppendAllText(Server.MapPath("/error.txt"), "\n\r" + DateTime.Now.ToLongTimeString() + ":" + exception.Message + "\n\r" +
-            //    exception.StackTrace + "\n\r\n\r");
-            //Response.Redirect("/Home/Error");//TODO:Log error
         }
     }
 }
