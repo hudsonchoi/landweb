@@ -52,6 +52,8 @@ namespace LandWeb
                 Environment.NewLine + Environment.NewLine +
                 "GetLastError.Message: " + Server.GetLastError().Message.ToString() +
                 Environment.NewLine + Environment.NewLine +
+                "GetLastError.StackTrace: " + Server.GetLastError().StackTrace.ToString() +
+                Environment.NewLine + Environment.NewLine +
                 "Page: " + Request.ServerVariables["SCRIPT_NAME"] +
                 Environment.NewLine + Environment.NewLine +
                 "Server: " + Request.ServerVariables["SERVER_NAME"] +

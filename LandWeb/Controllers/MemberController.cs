@@ -52,7 +52,10 @@ namespace LandWeb.Controllers
                 model.JobType = dal.GetJobTypes().ToList().Where(a => a.id == (int)model.Member.jobtype).FirstOrDefault().name;
             model.Address = dal.GetAddress(((int)model.Member.address_id)).ToList().FirstOrDefault();
             model.Status = dal.GetStatus().ToList().Where(a => a.id == (int)model.Member.StatusCode).FirstOrDefault().name;
-            model.StatusChanged = (DateTime)model.Member.StatusChanged;
+            if (model.Member.StatusChanged != null)
+            {
+                model.StatusChanged = (DateTime)model.Member.StatusChanged;
+            }
             if (model.Member.entrytype != null && model.Member.entrytype > 0)
                 model.EntryType = dal.GetEntryTypes().ToList().Where(a => a.id == (int)model.Member.entrytype).FirstOrDefault().name;
             model.Visits = dal.GetVisits((int)ID).ToList();

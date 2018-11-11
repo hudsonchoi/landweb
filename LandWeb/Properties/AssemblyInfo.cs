@@ -32,10 +32,15 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Revision and Build Numbers
 // by using the '*' as shown below:
 
-[assembly: AssemblyVersion("1.1.4")]
+[assembly: AssemblyVersion("1.1.5")]
+// 11/10/2018 Bugfix - StatusChange is null; 
+// 11/10/2018 - Add StackTrace in the global exception handling
+[assembly: AssemblyFileVersion("1.1.5")]
+
+//[assembly: AssemblyVersion("1.1.4")]
 // 11/4/2018 Bugfix - filtered null/invalid data; ministry code = 0, cours code = 0 and birthday is null; 
 // 11/4/2018 - Enhanced the error message in the global exception handling
-[assembly: AssemblyFileVersion("1.1.4")]
+//[assembly: AssemblyFileVersion("1.1.4")]
 
 //[assembly: AssemblyVersion("1.1.3")]
 // 9/16/2018 Bugfix - Once reached to cell report via red cell link from the member detail page, date range doesn't work;
