@@ -27,7 +27,7 @@ select c.code, c.course_code, c.year_no, c.semester_no, c.name, c.teacher_name, 
        c.active_yn, c.create_date, c.create_by, c.update_date, c.update_by, c.delete_date, c.delete_by, c.lastchanged,
        case when mc.memberid is not null then 'Y' else 'N' end as requestyn
   from courses c
-  left outer join member_course mc on mc.memberid = @MemberId and mc.course_code = c.code
+  left outer join member_course mc on mc.memberid = @MemberId and mc.course_code = c.code and mc.delete_date is null
  where c.end_date > getdate()
    and c.delete_date is null;");
                     SqlDataAdapter dataAdapter = new SqlDataAdapter(strSql, cnn);
