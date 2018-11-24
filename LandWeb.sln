@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28306.52
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LandWeb", "LandWeb\LandWeb.csproj", "{A3B752D4-57F1-4C0A-B752-001C50815F5B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LandWeb.Tests", "LandWeb.Tests\LandWeb.Tests.csproj", "{0B85652C-60BA-4820-B561-85D414F87418}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LandWeb.Model", "LandWeb.Model\LandWeb.Model.csproj", "{0A13CE01-6CEA-49A0-AE37-9E8C56987EB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAChodae", "BAChodae\BAChodae.csproj", "{83F17E50-9FDA-4ECD-AD1C-7060EF201CE7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,8 +29,15 @@ Global
 		{0A13CE01-6CEA-49A0-AE37-9E8C56987EB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A13CE01-6CEA-49A0-AE37-9E8C56987EB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A13CE01-6CEA-49A0-AE37-9E8C56987EB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83F17E50-9FDA-4ECD-AD1C-7060EF201CE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83F17E50-9FDA-4ECD-AD1C-7060EF201CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83F17E50-9FDA-4ECD-AD1C-7060EF201CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83F17E50-9FDA-4ECD-AD1C-7060EF201CE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {892297CC-C53E-4502-AFB7-082688F82076}
 	EndGlobalSection
 EndGlobal

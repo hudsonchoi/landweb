@@ -1,0 +1,80 @@
+﻿@model IEnumerable<LandWeb.Models.CAMember>
+@{
+    ViewBag.Title = "Search";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="indexBody">
+        <div class="bodyWrap">
+            <!-- HEADER START -->
+            <header>
+                <div class="headerWrap">
+                    <div class="menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <h1>Chodae Academy</h1>
+                    <div class="dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </header><!-- HEADER END -->
+            <!-- CONTENT START -->
+            <content>
+                <div class="contentWrap">
+                    <div class="searchWrap">
+                        <h3>초대교회 등록 교인 찾기</h3>
+                        <div class="searchBox">
+                            <input name="Search" type="search" value="@ViewBag.Search" placeholder="성명 또는 교인번호를 입력하세요.">
+                            <button type="submit" class="searchBtn"><img src="/img/search.png" alt=""></button>
+                        </div>
+                        <p style="letter-spacing: 0px;">&#42;정확한 검색을 위해 교인번호를 이용한 검색을 추천합니다.</p>
+                    </div>
+
+                    <div id="search_result" class="resultBox" style="@ViewBag.ShowSearchResult">
+                        <div class="title">
+                            <span class="line"></span>
+                            <h3>교인을 선택하세요</h3>
+                            <span class="line"></span>
+                        </div>
+
+                        @foreach (LandWeb.Models.CAMember dtList in @Model)
+                        {
+                            <a href="@Url.Action("CAList", new { Id = dtList.Id })" class="listBox">
+                                <h2>@dtList.Id</h2>
+                                <h3>@dtList.FullName</h3>
+                                <p>@dtList.BirthDate</p>
+                            </a>
+                        }
+                    </div>
+                </div>
+            </content><!-- CONTENT END -->
+        </div>
+
+        <!-- bodyBG START -->
+        <div class="bodyBG"></div><!-- HbodyBG END -->
+        <!-- POPUP START -->
+        <div class="popupWrap" style="@ViewBag.ShowSearchError">
+            <div class="popupBox">
+                <h2>검색 실패. 다시 시도하세요.</h2>
+                <a href="#" class="basicBtn okay">확 인</a>
+            </div>
+            <div class="darkBG"></div>
+        </div><!-- POPUP END -->
+    </div>
+}
+
+<script>
+    $(".darkBG").click(function () {
+        $(".popupWrap").css("display", "none");
+    });
+
+    $(".okay").click(function () {
+        $(".popupWrap").css("display", "none");
+    });
+</script>
