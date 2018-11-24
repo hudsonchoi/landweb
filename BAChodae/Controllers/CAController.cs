@@ -82,11 +82,11 @@ namespace LandWeb.Controllers
                 DataSet dsList = ctxt.GetAvailableCourse(nMemberId);
                 dtList = dsList.Tables["courses"].AsEnumerable().Select(m => new CACourse()
                 {
-                    Id = m.Field<int>("id"),
+                    Code = m.Field<int>("code"),
                     CourseCode = m.Field<string>("course_code"),
                     YearNo = m.Field<int?>("year_no"),
                     SemesterNo = m.Field<int?>("semester_no"),
-                    CourseName = m.Field<string>("course_name"),
+                    Name = m.Field<string>("name"),
                     TeacherName = m.Field<string>("teacher_name"),
                     StartDate = m.Field<DateTime>("start_date").ToString("MM/dd/yy"),
                     StartTime = m.Field<string>("start_time"),
@@ -99,14 +99,14 @@ namespace LandWeb.Controllers
                     Difficulty = m.Field<string>("difficulty"),
                     PrerequisiteCourseId = m.Field<int?>("prerequisite_course_id"),
                     ActiveYN = m.Field<string>("active_yn"),
-                    CraeteDate = m.Field<DateTime>("create_date"),
-                    CreateBy = m.Field<string>("create_by"),
-                    UpdateDate = m.Field<DateTime>("update_date"),
-                    UpdateBy = m.Field<string>("update_by"),
-                    DeleteDate = m.Field<DateTime?>("delete_date"),
-                    DeleteBy = m.Field<string>("delete_by"),
+                    //CraeteDate = m.Field<DateTime>("create_date"),
+                    //CreateBy = m.Field<string>("create_by"),
+                    //UpdateDate = m.Field<DateTime>("update_date"),
+                    //UpdateBy = m.Field<string>("update_by"),
+                    //DeleteDate = m.Field<DateTime?>("delete_date"),
+                    //DeleteBy = m.Field<string>("delete_by"),
                     Requested = m.Field<string>("requestyn").Equals("Y") ? "checked='checked'" : "",
-                    RequestDate = m.Field<DateTime?>("requestdate")
+                    //RequestDate = m.Field<DateTime?>("requestdate")
                 }).ToList();
             }
 
@@ -125,7 +125,7 @@ namespace LandWeb.Controllers
         public ActionResult CAList(FormCollection formCollection)
         {
             int nMemberId = 0;
-            string strMemberId = (formCollection["member_id"] ?? "").ToString();
+            string strMemberId = (formCollection["memberid"] ?? "").ToString();
             if (!Int32.TryParse(strMemberId, out nMemberId))
             {
 
@@ -166,11 +166,11 @@ namespace LandWeb.Controllers
                 DataSet dsList = ctxt.GetAvailableCourse(nMemberId);
                 dtList = dsList.Tables["courses"].AsEnumerable().Select(m => new CACourse()
                 {
-                    Id = m.Field<int>("id"),
+                    Code = m.Field<int>("code"),
                     CourseCode = m.Field<string>("course_code"),
                     YearNo = m.Field<int?>("year_no"),
                     SemesterNo = m.Field<int?>("semester_no"),
-                    CourseName = m.Field<string>("course_name"),
+                    Name = m.Field<string>("name"),
                     TeacherName = m.Field<string>("teacher_name"),
                     StartDate = m.Field<DateTime>("start_date").ToString("MM/dd/yy"),
                     StartTime = m.Field<string>("start_time"),
@@ -183,14 +183,14 @@ namespace LandWeb.Controllers
                     Difficulty = m.Field<string>("difficulty"),
                     PrerequisiteCourseId = m.Field<int?>("prerequisite_course_id"),
                     ActiveYN = m.Field<string>("active_yn"),
-                    CraeteDate = m.Field<DateTime>("create_date"),
-                    CreateBy = m.Field<string>("create_by"),
-                    UpdateDate = m.Field<DateTime>("update_date"),
-                    UpdateBy = m.Field<string>("update_by"),
-                    DeleteDate = m.Field<DateTime?>("delete_date"),
-                    DeleteBy = m.Field<string>("delete_by"),
-                    Requested = m.Field<string>("requestyn").Equals("Y") ? "checked='checked'" : "",
-                    RequestDate = m.Field<DateTime?>("requestdate")
+                    //CraeteDate = m.Field<DateTime>("create_date"),
+                    //CreateBy = m.Field<string>("create_by"),
+                    //UpdateDate = m.Field<DateTime>("update_date"),
+                    //UpdateBy = m.Field<string>("update_by"),
+                    //DeleteDate = m.Field<DateTime?>("delete_date"),
+                    //DeleteBy = m.Field<string>("delete_by"),
+                    //Requested = m.Field<string>("requestyn").Equals("Y") ? "checked='checked'" : "",
+                    //RequestDate = m.Field<DateTime?>("requestdate")
                 }).ToList();
             }
             ViewBag.ShowSaveResult = "display:block;";

@@ -8,7 +8,7 @@ namespace LandWeb.Models
 {
     public class CACourse
     {
-        public int Id { get; set; }
+        public int Code { get; set; }
         [Display(Name = "Course Code")]
         public string CourseCode { get; set; }
         [Display(Name = "Year")]
@@ -16,7 +16,7 @@ namespace LandWeb.Models
         [Display(Name = "Semester")]
         public int? SemesterNo { get; set; }
         [Display(Name = "Course Name")]
-        public string CourseName { get; set; }
+        public string Name { get; set; }
         [Display(Name = "Teacher")]
         public string TeacherName { get; set; }
         [Display(Name = "Start Date")]

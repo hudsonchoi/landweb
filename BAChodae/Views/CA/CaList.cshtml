@@ -31,7 +31,7 @@
                     <div class="listBox" id="infoBox">
                         <div>
                             <h3 class="green">@ViewBag.MemberId</h3>
-                            @Html.Hidden("member_id", (string)ViewBag.MemberId)
+                            @Html.Hidden("memberid", (string)ViewBag.MemberId)
                             <h2>@ViewBag.FullName</h2>
                         </div>
                         <div>
@@ -53,10 +53,10 @@
                             @foreach (LandWeb.Models.CACourse dtList in @Model)
                             {
                                 <div class="classWrap">
-                                    <input type="checkbox" name="course_@dtList.Id" id="course_@dtList.Id" @dtList.Requested />
-                                    <label class="listBox classBox" for="course_@dtList.Id">
+                                    <input type="checkbox" name="course_@dtList.Code" id="course_@dtList.Code" @dtList.Requested />
+                                    <label class="listBox classBox" for="course_@dtList.Code">
                                         <div>
-                                            <h2>@dtList.CourseName</h2>
+                                            <h2>@dtList.Name</h2>
                                             <div>
                                                 <h3>@dtList.StartDate ~ @dtList.EndDate, @dtList.DayOfWeekName @dtList.StartTime</h3>
                                                 <div>
