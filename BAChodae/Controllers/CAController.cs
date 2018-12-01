@@ -195,7 +195,7 @@ namespace LandWeb.Controllers
             }
             ViewBag.ShowSaveResult = "display:block;";
             ViewBag.SaveResult = "성공적으로 저장하였습니다";
-
+            ViewBag.SelectedCourses = strCheckedCourses;
             return View(dtList);
         }
     }

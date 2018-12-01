@@ -1,6 +1,14 @@
 ﻿@model IEnumerable<LandWeb.Models.CACourse>
+@using System.Collections.Generic;
+@using System.Linq;
 @{
     ViewBag.Title = "Chodae Academy";
+    string[] selectedCourses = { };
+    if (ViewBag.SelectedCourses != null)
+    {
+        selectedCourses = ViewBag.SelectedCourses.Split(',');
+    }
+    string strChecked = string.Empty;
 }
 
 @using (Html.BeginForm())
@@ -52,8 +60,9 @@
                         <div class="classList">
                             @foreach (LandWeb.Models.CACourse dtList in @Model)
                             {
+                                strChecked = selectedCourses.ToList().Contains(dtList.Code.ToString()) ? "checked" : "";
                                 <div class="classWrap">
-                                    <input type="checkbox" name="course_@dtList.Code" id="course_@dtList.Code" @dtList.Requested />
+                                    <input type="checkbox" name="course_@dtList.Code" id="course_@dtList.Code" @dtList.Requested @strChecked/>
                                     <label class="listBox classBox" for="course_@dtList.Code">
                                         <div>
                                             <h2>@dtList.Name</h2>
