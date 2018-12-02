@@ -77,7 +77,7 @@ update mc
 
                     string strSql = @"
 update mc
-   set update_date = getdate(), update_by = m.last_name + ' ' + m.first_name, delete_date = null, delete_by = null
+   set update_date = getdate(), update_by = m.last_name + ' ' + m.first_name, delete_date = null, delete_by = null, mc.row_status = 'U'
   from member_course mc
  inner join members m on m.id = mc.memberid
  where mc.memberid = @MemberId and mc.course_code = @CourseId and mc.delete_date is not null;
