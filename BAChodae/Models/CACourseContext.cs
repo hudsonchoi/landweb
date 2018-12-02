@@ -58,7 +58,7 @@ select c.code, c.course_code, c.year_no, c.semester_no, c.name, c.teacher_name, 
                 {
                     string strSql = string.Format(@"
 update mc
-   set delete_date = getdate(), delete_by = m.last_name + ' ' + m.first_name
+   set delete_date = getdate(), delete_by = m.last_name + ' ' + m.first_name, row_status = 'D'
   from member_course mc
  inner join members m on m.id = mc.memberid
  where mc.memberid = @MemberId
@@ -81,11 +81,12 @@ update mc
   from member_course mc
  inner join members m on m.id = mc.memberid
  where mc.memberid = @MemberId and mc.course_code = @CourseId and mc.delete_date is not null;
-insert into member_course (memberid, course_code, create_date, create_by, update_date, update_by, graduated)
+insert into member_course (memberid, course_code, create_date, create_by, update_date, update_by, graduated, row_status)
 select @MemberId, @CourseId,
        getdate() as create_date, m.last_name + ' ' + m.first_name as create_by,
        getdate() as update_date, m.last_name + ' ' + m.first_name as update_by,
-       '1900-1-1'
+       '1900-1-1',
+       'C'
   from members m
  where m.id = @MemberId
    and not exists (select * from member_course where memberid = @MemberId and course_code = @CourseId)";
