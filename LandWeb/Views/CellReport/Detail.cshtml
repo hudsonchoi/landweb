@@ -59,13 +59,7 @@
 
 <div class="row">
     <div class="col-md-12 DataRow">
-        <span class="lbl">Memo</span>
-        @Model.Report.memo
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-12 DataRow">
-        <span class="lbl">요청사항</span>
+        <span class="lbl">사역신청</span>
         @Model.Report.request
     </div>
 </div>
@@ -89,7 +83,10 @@
                             불참사유
                         </td>
                         <td>
-                            메모
+                            예배장소
+                        </td>
+                        <td>
+                            주일출석 특이사항
                         </td>
                         <td>
                             Cell
@@ -99,32 +96,42 @@
                     @foreach (var m in Model.Members)
                     {
 
-                        <tr>
-                            <td>
-                                @m.last_name@m.first_name
-                            </td>
-                            <td>
-                                @(m.sex?"남":"여")
+                    <tr>
+                        <td>
+                            @m.last_name@m.first_name
+                        </td>
+                        <td>
+                            @(m.sex ? "남" : "여")
 
-                            </td>
-                            <td>
-                                @(m.attendance?"O":"X")
-                            </td>
-                            <td>
-                                @m.reason
-                            </td>
-                            <td>
-                                @m.memo
-                            </td>
-                            <td>
-                                @m.cell
-                            </td>
-                        </tr>
+                        </td>
+                        <td>
+                            @(m.attendance ? "O" : "X")
+                        </td>
+                        <td>
+                            @m.reason
+                        </td>
+                        <td>
+                            @m.service_time_place_id
+                        </td>
+                        <td>
+                            @m.memo
+                        </td>
+                        <td>
+                            @m.cell
+                        </td>
+                    </tr>
 
                     }
                 </table>
             </div>
         }
+    </div>
+<br /><br />
+    <div class="row">
+        <div class="col-md-12 DataRow">
+            <span class="lbl">특별보고사항</span>
+            @Model.Report.memo
+        </div>
     </div>
 <div style="margin-top:20px; width:100%; text-align:right">
     <div style="float:right">
