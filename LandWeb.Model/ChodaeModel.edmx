@@ -40,7 +40,7 @@
           <Property Name="lastchanged" Type="timestamp" StoreGeneratedPattern="Computed" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ChoDae.dbo.users_master' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'ChoDae012619.dbo.users_master' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="users_master">
           <Key>
             <PropertyRef Name="id" />
@@ -479,7 +479,7 @@ warning 6002: The table/view 'ChoDae.dbo.users_master' does not have a primary k
             <Parameter Name="code" Mode="In" Type="Int32" />
             <Parameter Name="isNew" Mode="In" Type="Boolean" />
           </FunctionImport>
-          <FunctionImport Name="reportdetailweb_get" ReturnType="Collection(ChodaeModel.reportdetailweb_get_Result)">
+          <FunctionImport Name="reportdetailweb_get">
             <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
             <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
             <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
@@ -487,6 +487,13 @@ warning 6002: The table/view 'ChoDae.dbo.users_master' does not have a primary k
             <Parameter Name="isNew" Mode="In" Type="Boolean" />
           </FunctionImport>
           <EntitySet Name="users_master" EntityType="ChodaeModel.users_master" />
+          <FunctionImport Name="reportdetailweb_get1" ReturnType="Collection(ChodaeModel.reportdetailweb_get1_Result)">
+            <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+            <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+            <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+            <Parameter Name="code" Mode="In" Type="Int32" />
+            <Parameter Name="isNew" Mode="In" Type="Boolean" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="member_list_Result">
           <Property Type="Int32" Name="id" Nullable="false" />
@@ -999,24 +1006,6 @@ warning 6002: The table/view 'ChoDae.dbo.users_master' does not have a primary k
           <Property Type="Int32" Name="role_level" Nullable="true" />
           <Property Type="Int32" Name="family_code" Nullable="true" />
         </ComplexType>
-        <ComplexType Name="reportdetailweb_get_Result">
-          <Property Type="Int32" Name="id" Nullable="false" />
-          <Property Type="Int32" Name="member_id" Nullable="false" />
-          <Property Type="Boolean" Name="attendance" Nullable="false" />
-          <Property Type="String" Name="reason" Nullable="true" MaxLength="255" />
-          <Property Type="Int32" Name="parent_id" Nullable="true" />
-          <Property Type="String" Name="memo" Nullable="true" MaxLength="255" />
-          <Property Type="DateTime" Name="regdate" Nullable="false" Precision="23" />
-          <Property Type="Binary" Name="lastchanged" Nullable="true" MaxLength="8" />
-          <Property Type="Int32" Name="role_level" Nullable="true" />
-          <Property Type="Int32" Name="role_code" Nullable="true" />
-          <Property Type="String" Name="row_status" Nullable="true" MaxLength="1" />
-          <Property Type="String" Name="first_name" Nullable="false" MaxLength="30" />
-          <Property Type="String" Name="last_name" Nullable="false" MaxLength="20" />
-          <Property Type="String" Name="cell" Nullable="true" MaxLength="15" />
-          <Property Type="Boolean" Name="sex" Nullable="false" />
-          <Property Type="Int32" Name="family_code" Nullable="true" />
-        </ComplexType>
         <EntityType Name="users_master">
           <Key>
             <PropertyRef Name="id" />
@@ -1037,6 +1026,25 @@ warning 6002: The table/view 'ChoDae.dbo.users_master' does not have a primary k
           <Property Name="update_date" Type="DateTime" Precision="3" />
           <Property Name="update_by" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
         </EntityType>
+        <ComplexType Name="reportdetailweb_get1_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="member_id" Nullable="false" />
+          <Property Type="Boolean" Name="attendance" Nullable="false" />
+          <Property Type="String" Name="reason" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="parent_id" Nullable="true" />
+          <Property Type="String" Name="memo" Nullable="true" MaxLength="255" />
+          <Property Type="DateTime" Name="regdate" Nullable="false" Precision="23" />
+          <Property Type="Binary" Name="lastchanged" Nullable="true" MaxLength="8" />
+          <Property Type="Int32" Name="role_level" Nullable="true" />
+          <Property Type="Int32" Name="role_code" Nullable="true" />
+          <Property Type="String" Name="row_status" Nullable="true" MaxLength="1" />
+          <Property Type="Int32" Name="service_time_place_id" Nullable="true" />
+          <Property Type="String" Name="first_name" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="last_name" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="cell" Nullable="true" MaxLength="15" />
+          <Property Type="Boolean" Name="sex" Nullable="false" />
+          <Property Type="Int32" Name="family_code" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1496,28 +1504,6 @@ warning 6002: The table/view 'ChoDae.dbo.users_master' does not have a primary k
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="reportdetailweb_get" FunctionName="ChodaeModel.Store.reportdetailweb_get">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ChodaeModel.reportdetailweb_get_Result">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="member_id" ColumnName="member_id" />
-                <ScalarProperty Name="attendance" ColumnName="attendance" />
-                <ScalarProperty Name="reason" ColumnName="reason" />
-                <ScalarProperty Name="parent_id" ColumnName="parent_id" />
-                <ScalarProperty Name="memo" ColumnName="memo" />
-                <ScalarProperty Name="regdate" ColumnName="regdate" />
-                <ScalarProperty Name="lastchanged" ColumnName="lastchanged" />
-                <ScalarProperty Name="role_level" ColumnName="role_level" />
-                <ScalarProperty Name="role_code" ColumnName="role_code" />
-                <ScalarProperty Name="row_status" ColumnName="row_status" />
-                <ScalarProperty Name="first_name" ColumnName="first_name" />
-                <ScalarProperty Name="last_name" ColumnName="last_name" />
-                <ScalarProperty Name="cell" ColumnName="cell" />
-                <ScalarProperty Name="sex" ColumnName="sex" />
-                <ScalarProperty Name="family_code" ColumnName="family_code" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <EntitySetMapping Name="users_master">
             <EntityTypeMapping TypeName="ChodaeModel.users_master">
               <MappingFragment StoreEntitySet="users_master">
@@ -1537,6 +1523,29 @@ warning 6002: The table/view 'ChoDae.dbo.users_master' does not have a primary k
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="reportdetailweb_get1" FunctionName="ChodaeModel.Store.reportdetailweb_get">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ChodaeModel.reportdetailweb_get1_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="member_id" ColumnName="member_id" />
+                <ScalarProperty Name="attendance" ColumnName="attendance" />
+                <ScalarProperty Name="reason" ColumnName="reason" />
+                <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+                <ScalarProperty Name="memo" ColumnName="memo" />
+                <ScalarProperty Name="regdate" ColumnName="regdate" />
+                <ScalarProperty Name="lastchanged" ColumnName="lastchanged" />
+                <ScalarProperty Name="role_level" ColumnName="role_level" />
+                <ScalarProperty Name="role_code" ColumnName="role_code" />
+                <ScalarProperty Name="row_status" ColumnName="row_status" />
+                <ScalarProperty Name="service_time_place_id" ColumnName="service_time_place_id" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="cell" ColumnName="cell" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="family_code" ColumnName="family_code" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

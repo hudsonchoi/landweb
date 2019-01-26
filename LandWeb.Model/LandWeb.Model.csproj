@@ -124,7 +124,7 @@
       <DependentUpon>ChodaeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="reportdetailweb_get_Result.cs">
+    <Compile Include="reportdetailweb_get1_Result.cs">
       <DependentUpon>ChodaeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="reportdetail_get_Result.cs">

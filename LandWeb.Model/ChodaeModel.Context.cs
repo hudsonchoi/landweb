@@ -553,7 +553,7 @@ namespace LandWeb.Model
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<reportdetail_get_Result>("reportdetail_get", frk_n4ErrorCode, frk_strErrorText, frk_isRequiresNewTransactionParameter, codeParameter, isNewParameter);
         }
     
-        public virtual ObjectResult<reportdetailweb_get_Result> reportdetailweb_get(ObjectParameter frk_n4ErrorCode, ObjectParameter frk_strErrorText, Nullable<bool> frk_isRequiresNewTransaction, Nullable<int> code, Nullable<bool> isNew)
+        public virtual int reportdetailweb_get(ObjectParameter frk_n4ErrorCode, ObjectParameter frk_strErrorText, Nullable<bool> frk_isRequiresNewTransaction, Nullable<int> code, Nullable<bool> isNew)
         {
             var frk_isRequiresNewTransactionParameter = frk_isRequiresNewTransaction.HasValue ?
                 new ObjectParameter("frk_isRequiresNewTransaction", frk_isRequiresNewTransaction) :
@@ -567,7 +567,24 @@ namespace LandWeb.Model
                 new ObjectParameter("isNew", isNew) :
                 new ObjectParameter("isNew", typeof(bool));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<reportdetailweb_get_Result>("reportdetailweb_get", frk_n4ErrorCode, frk_strErrorText, frk_isRequiresNewTransactionParameter, codeParameter, isNewParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("reportdetailweb_get", frk_n4ErrorCode, frk_strErrorText, frk_isRequiresNewTransactionParameter, codeParameter, isNewParameter);
+        }
+    
+        public virtual ObjectResult<reportdetailweb_get1_Result> reportdetailweb_get1(ObjectParameter frk_n4ErrorCode, ObjectParameter frk_strErrorText, Nullable<bool> frk_isRequiresNewTransaction, Nullable<int> code, Nullable<bool> isNew)
+        {
+            var frk_isRequiresNewTransactionParameter = frk_isRequiresNewTransaction.HasValue ?
+                new ObjectParameter("frk_isRequiresNewTransaction", frk_isRequiresNewTransaction) :
+                new ObjectParameter("frk_isRequiresNewTransaction", typeof(bool));
+    
+            var codeParameter = code.HasValue ?
+                new ObjectParameter("code", code) :
+                new ObjectParameter("code", typeof(int));
+    
+            var isNewParameter = isNew.HasValue ?
+                new ObjectParameter("isNew", isNew) :
+                new ObjectParameter("isNew", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<reportdetailweb_get1_Result>("reportdetailweb_get1", frk_n4ErrorCode, frk_strErrorText, frk_isRequiresNewTransactionParameter, codeParameter, isNewParameter);
         }
     }
 }
