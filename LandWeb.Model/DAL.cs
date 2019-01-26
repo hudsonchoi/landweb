@@ -172,9 +172,9 @@ namespace LandWeb.Model
             return context.report_get(frk_n4ErrorCode, frk_strErrorText, null, ID).FirstOrDefault();
         }
 
-        public IEnumerable<reportdetailweb_get1_Result> GetReportDetailMembers(int ID)
+        public IEnumerable<reportdetailweb_get2_Result> GetReportDetailMembers(int ID)
         {
-            return context.reportdetailweb_get1(frk_n4ErrorCode, frk_strErrorText, null, ID, null);
+            return context.reportdetailweb_get2(frk_n4ErrorCode, frk_strErrorText, null, ID, null);
         }
 
         //public IEnumerable<login_Result> Login(string username, string password)

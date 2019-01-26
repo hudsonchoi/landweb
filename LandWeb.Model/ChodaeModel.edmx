@@ -487,7 +487,14 @@ warning 6002: The table/view 'ChoDae012619.dbo.users_master' does not have a pri
             <Parameter Name="isNew" Mode="In" Type="Boolean" />
           </FunctionImport>
           <EntitySet Name="users_master" EntityType="ChodaeModel.users_master" />
-          <FunctionImport Name="reportdetailweb_get1" ReturnType="Collection(ChodaeModel.reportdetailweb_get1_Result)">
+          <FunctionImport Name="reportdetailweb_get1">
+            <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
+            <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
+            <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
+            <Parameter Name="code" Mode="In" Type="Int32" />
+            <Parameter Name="isNew" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="reportdetailweb_get2" ReturnType="Collection(ChodaeModel.reportdetailweb_get2_Result)">
             <Parameter Name="frk_n4ErrorCode" Mode="InOut" Type="Int32" />
             <Parameter Name="frk_strErrorText" Mode="InOut" Type="String" />
             <Parameter Name="frk_isRequiresNewTransaction" Mode="In" Type="Boolean" />
@@ -1026,7 +1033,7 @@ warning 6002: The table/view 'ChoDae012619.dbo.users_master' does not have a pri
           <Property Name="update_date" Type="DateTime" Precision="3" />
           <Property Name="update_by" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
         </EntityType>
-        <ComplexType Name="reportdetailweb_get1_Result">
+        <ComplexType Name="reportdetailweb_get2_Result">
           <Property Type="Int32" Name="id" Nullable="false" />
           <Property Type="Int32" Name="member_id" Nullable="false" />
           <Property Type="Boolean" Name="attendance" Nullable="false" />
@@ -1044,6 +1051,7 @@ warning 6002: The table/view 'ChoDae012619.dbo.users_master' does not have a pri
           <Property Type="String" Name="cell" Nullable="true" MaxLength="15" />
           <Property Type="Boolean" Name="sex" Nullable="false" />
           <Property Type="Int32" Name="family_code" Nullable="true" />
+          <Property Type="String" Name="service_place" Nullable="true" MaxLength="61" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1523,9 +1531,9 @@ warning 6002: The table/view 'ChoDae012619.dbo.users_master' does not have a pri
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="reportdetailweb_get1" FunctionName="ChodaeModel.Store.reportdetailweb_get">
+          <FunctionImportMapping FunctionImportName="reportdetailweb_get2" FunctionName="ChodaeModel.Store.reportdetailweb_get">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="ChodaeModel.reportdetailweb_get1_Result">
+              <ComplexTypeMapping TypeName="ChodaeModel.reportdetailweb_get2_Result">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="member_id" ColumnName="member_id" />
                 <ScalarProperty Name="attendance" ColumnName="attendance" />
@@ -1543,6 +1551,7 @@ warning 6002: The table/view 'ChoDae012619.dbo.users_master' does not have a pri
                 <ScalarProperty Name="cell" ColumnName="cell" />
                 <ScalarProperty Name="sex" ColumnName="sex" />
                 <ScalarProperty Name="family_code" ColumnName="family_code" />
+                <ScalarProperty Name="service_place" ColumnName="service_place" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
